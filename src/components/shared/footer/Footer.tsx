@@ -152,13 +152,7 @@ function Footer() {
                                                         placeholder="Saisir votre email"
                                                         className="w-full h-12 pl-5 pr-28 rounded-full bg-transparent border border-white/30 placeholder-white/65 text-white outline-none focus:border-white/70 transition"
                                                     />
-                                                    <button
-                                                        type="submit"
-                                                        aria-label="Envoyer"
-                                                        className="group absolute top-1/2 -translate-y-1/2 -right-4 h-14 w-14 rounded-full grid place-items-center text-white bg-gradient-to-b from-[#2a2f3d] to-[#0A0F1C] ring-1 ring-white/25 hover:ring-white/40 shadow-[0_10px_28px_rgba(0,0,0,0.35)] relative"
-                                                    >
-                                                        <span className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-white/20" />
-                                                        <span className="pointer-events-none absolute -inset-[6px] rounded-full border border-white/80 opacity-90" />
+                                                    <button type="submit" className="h-11 px-6 rounded-full bg-gradient-to-b from-[#252834] to-[#0A0F1C] text-white hover:opacity-90 transition">
                                                         <i className="fa-solid fa-arrow-right text-[clamp(1rem,1.6vw,1.25rem)]" />
                                                     </button>
                                                     <p className="mt-3 text-[clamp(0.7rem,1vw,0.875rem)] text-white/70">
@@ -171,38 +165,7 @@ function Footer() {
                                 )}
                             </Disclosure>
 
-                            {/* 5) Brochure */}
-                            <Disclosure>
-                                {({ open }) => (
-                                    <div className="rounded-xl bg-white/5">
-                                        <DisclosureButton className="w-full flex items-center justify-between px-4 py-3">
-                                            <span className="text-[clamp(1rem,1.8vw,1.125rem)] font-medium">Brochure</span>
-                                            <i className={`fa-solid fa-chevron-${open ? "up" : "down"} text-[clamp(0.75rem,1vw,0.875rem)] opacity-80`} />
-                                        </DisclosureButton>
-                                        <Transition
-                                            enter="transition duration-150 ease-out"
-                                            enterFrom="transform scale-y-95 opacity-0"
-                                            enterTo="transform scale-y-100 opacity-100"
-                                            leave="transition duration-100 ease-in"
-                                            leaveFrom="transform scale-y-100 opacity-100"
-                                            leaveTo="transform scale-y-95 opacity-0"
-                                        >
-                                            <DisclosurePanel className="px-4 pb-4 pt-2">
-                                                <a
-                                                    href="#"
-                                                    download
-                                                    className="inline-flex items-center gap-3 rounded-full bg-[#F6F6F6] text-[#0A0F1C] px-6 py-3 text-[clamp(0.9rem,1.2vw,0.9375rem)] font-medium hover:opacity-90 transition"
-                                                >
-                                                    <i className="fa-solid fa-file-arrow-down" />
-                                                    Télécharger la brochure
-                                                </a>
-                                            </DisclosurePanel>
-                                        </Transition>
-                                    </div>
-                                )}
-                            </Disclosure>
-
-                            {/* 6) Contactez-nous */}
+                            {/* 5) Contactez-nous */}
                             <Disclosure>
                                 {({ open }) => (
                                     <div className="rounded-xl bg-white/5">
@@ -376,7 +339,7 @@ function Footer() {
                     </div>
 
                     {/* Bas de page : reste toujours visible et ne recouvre rien */}
-                    <div className="w-full border-t border-white/10 mt-8 py-4 bg-[#070B16]">
+                    <div className="w-full mt-8 py-4 bg-[#070B16]">
                         <p className="text-left text-[clamp(0.75rem,1vw,0.875rem)] text-[#f6f6f6]/70 px-4 sm:px-6 md:px-10">
                             © 2025 AKOR AESTHETICS • Conditions générales • Politique de confidentialité
                         </p>

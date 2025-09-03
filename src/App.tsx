@@ -7,14 +7,14 @@ function App() {
   return (
       <>
           <Router>
-              <div className="min-h-dvh flex flex-col">
+              <div className="min-h-dvh flex flex-col bg-[#f6f6f6]">
                   <Navbar />
 
                   {/* Contenu des pages */}
                   <main className="flex-1">
                       <Routes>
                           <Route path="/" element={<Home />} />
-                          {/* tu ajouteras d’autres routes ici */}
+
                       </Routes>
                   </main>
 

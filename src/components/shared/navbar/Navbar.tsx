@@ -6,7 +6,7 @@ function Navbar() {
 
     return (
         <>
-            <header className="sticky top-0 z-50 w-full ">
+            <header className="sticky top-0 z-50 w-full bg-[#f6f6f6]">
                 <nav className="h-20 w-full px-6 md:px-10 flex items-center">
                     {/* FLEX 1 : logo */}
                     <Link to="/" className="flex items-center gap-3 shrink-0">
