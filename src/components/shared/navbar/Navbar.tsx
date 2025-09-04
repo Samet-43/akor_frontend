@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { productsData } from "../../../data/products"; // <-- ajout
 
 function Navbar() {
     const [open, setOpen] = useState(false);
@@ -34,7 +35,7 @@ function Navbar() {
 
                             <li className="relative group flex items-center gap-2">
                                 <NavLink
-                                    to="/product"
+                                    to="/products"
                                     className={({ isActive }) =>
                                         isActive
                                             ? "font-semibold text-gray-900 flex items-center gap-2"
@@ -51,45 +52,23 @@ function Navbar() {
                                     </svg>
                                 </NavLink>
 
-                                {/* Dropdown → produits */}
+                                {/* Dropdown → liste produits */}
                                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-56 rounded-xl bg-white shadow-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-                                    <NavLink
-                                        to="/product/1"
-                                        className="block px-3 py-2 rounded-lg hover:bg-gray-50"
-                                    >
-                                        Produit 1
-                                    </NavLink>
-                                    <NavLink
-                                        to="/product/2"
-                                        className="block px-3 py-2 rounded-lg hover:bg-gray-50"
-                                    >
-                                        Produit 2
-                                    </NavLink>
-                                    <NavLink
-                                        to="/product/3"
-                                        className="block px-3 py-2 rounded-lg hover:bg-gray-50"
-                                    >
-                                        Produit 3
-                                    </NavLink>
+                                    {productsData.map((p) => (
+                                        <NavLink
+                                            key={p.id}
+                                            to={`/products/${p.id}`}
+                                            className="block px-3 py-2 rounded-lg hover:bg-gray-50"
+                                        >
+                                            {p.title}
+                                        </NavLink>
+                                    ))}
                                 </div>
                             </li>
 
                             <li>
                                 <NavLink
-                                    to="/blog"
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? "font-semibold text-gray-900"
-                                            : "text-gray-700 hover:text-gray-900"
-                                    }
-                                >
-                                    Blog
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink
-                                    to="/about"
+                                    to="/about-us"
                                     className={({ isActive }) =>
                                         isActive
                                             ? "font-semibold text-gray-900"
@@ -110,7 +89,7 @@ function Navbar() {
                         </Link>
                     </div>
 
-                    {/* Burger mobile (à droite) */}
+                    {/* Burger mobile (inchangé) */}
                     <button
                         className="ml-auto md:hidden inline-flex items-center justify-center size-10 rounded-full"
                         aria-label="Ouvrir le menu"
@@ -122,7 +101,7 @@ function Navbar() {
                     </button>
                 </nav>
 
-                {/* Panneau mobile plein écran */}
+                {/* Panneau mobile plein écran (inchangé pour l’instant) */}
                 {open && (
                     <div className="fixed inset-0 z-50 bg-white">
                         <div className="h-20 px-6 flex items-center justify-between">
@@ -148,12 +127,19 @@ function Navbar() {
                                     </svg>
                                 </summary>
                                 <div className="mt-3 pl-3 space-y-2">
-                                    <Link to="/tech/1" onClick={() => setOpen(false)} className="block py-2">Tech 1</Link>
-                                    <Link to="/tech/2" onClick={() => setOpen(false)} className="block py-2">Tech 2</Link>
+                                    {productsData.map((p) => (
+                                        <Link
+                                            key={p.id}
+                                            to={`/products/${p.id}`}
+                                            onClick={() => setOpen(false)}
+                                            className="block py-2"
+                                        >
+                                            {p.title}
+                                        </Link>
+                                    ))}
                                 </div>
                             </details>
-                            <Link to="/blog" onClick={() => setOpen(false)} className="block py-3">Blog</Link>
-                            <Link to="/about" onClick={() => setOpen(false)} className="block py-3">À propos</Link>
+                            <Link to="/about-us" onClick={() => setOpen(false)} className="block py-3">À propos</Link>
                             <Link
                                 to="/contact"
                                 onClick={() => setOpen(false)}
