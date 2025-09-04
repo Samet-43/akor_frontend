@@ -1,37 +1,24 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { productsData } from "../../data/products.ts";
 
 function Home() {
 
     const items = useMemo(
-        () => [
-            {
-                n: "04",
-                title: "Sponge Device",
-                desc:
-                    "Nettoyage profond et hydratation de la peau grâce à des protocoles précis et non invasifs.",
-                to: "/product/sponge",
-            },
-            {
-                n: "05",
-                title: "DeepWave",
-                desc:
-                    "Technologie par ondes pour stimuler le derme et améliorer visiblement la fermeté.",
-                to: "/product/deepwave",
-            },
-            {
-                n: "06",
-                title: "Plamon",
-                desc:
-                    "Analyse haute précision de la peau et du cuir chevelu avec diagnostic détaillé et recommandations personnalisées.",
-                to: "/product/plamon",
-            },
-        ],
+        () =>
+            productsData.map(p => ({
+                n: String(p.id).padStart(2, "0"), // "01"..."06"
+                title: p.title,
+                type: p.type,
+                desc: p.description,
+                image: p.image,
+                to: `/product/${p.id}`,
+            })),
         []
     );
 
-    const [index, setIndex] = useState(2); // 06 Plamon par défaut (comme la maquette)
+    const [index, setIndex] = useState(1);
     const hoverRef = useRef(false);
 
     // Auto-rotation (pause au survol)
@@ -217,13 +204,32 @@ function Home() {
                         {/* Image */}
                         <img src="/home/hero-2.png" alt="" className="w-full h-auto object-cover" />
 
+                        {/* Image produit actif, par-dessus */}
+                        <AnimatePresence mode="wait">
+                            <motion.img
+                                key={active.image}
+                                src={active.image}
+                                alt={active.title}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 1.05 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                className="
+                                          absolute top-1/2 left-1/2 translate-y-[-30%] translate-x-[20%]
+                                          max-h-[60%] max-w-[50%] w-auto object-contain
+                                          pointer-events-none z-20
+                                        "
+                            />
+                        </AnimatePresence>
+
+
                         {/* Dégradé */}
                         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A0F1C]/60 via-[#0A0F1C]/35 to-transparent" />
 
                         {/* Contenu superposé */}
                         <div className="absolute inset-0 px-10 lg:px-14 pt-14 pb-14">
                             {/* LISTE visible uniquement en desktop */}
-                            <ul className="space-y-4 hidden lg:block">
+                            <ul className="space-y-4 hidden xl:block">
                                 {items.map((it, i) => {
                                     const isActive = i === index;
                                     return (
@@ -238,8 +244,8 @@ function Home() {
                                             >
                                                 <span className="text-[#C7D3DA]/80 tabular-nums">{it.n}</span>
                                                 <span className="font-[Montserrat] text-[20px] text-white">
-                    {it.title}
-                  </span>
+                                                  {it.title}
+                                                </span>
                                             </button>
                                         </li>
                                     );
