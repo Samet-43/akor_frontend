@@ -115,9 +115,8 @@ function Contact() {
                 </div>
             </section>
 
-
             <section className="w-full bg-[#f6f6f6] py-20 mt-32 mb-32">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6">
+                <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6">
 
                     <div>
                         <p className="text-3xl font-semibold text-[#0a0e17]">+1k</p>

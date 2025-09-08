@@ -102,6 +102,10 @@ function Home() {
                 <div className="w-[97%] mx-auto">
                     {/* Bloc texte centré */}
                     <div className="text-center">
+                        <p className="text-3xl font-bold">
+                            100% Expertise Belge
+                        </p>
+
                         <h2
                             className="
                                         font-[Montserrat] font-normal
