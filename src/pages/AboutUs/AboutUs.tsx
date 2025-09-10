@@ -1,7 +1,10 @@
+import Contact from "../../components/shared/contact/Contact.tsx"
+import Deposition from "../../components/shared/deposition/Deposition.tsx"
+
 function AboutUs() {
     return (
         <>
-            <section className="relative w-full bg-[#f6f6f6]">
+            <section className="relative w-full">
                 {/* Image */}
                 <img
                     src="/about-us/hero-1.png"
@@ -31,7 +34,7 @@ function AboutUs() {
                 </div>
             </section>
 
-            <section className="w-full bg-[#F6F6F6] py-10 md:py-14">
+            <section className="w-full py-10 md:py-14">
                 <div className="mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 md:gap-8 items-stretch">
 
@@ -39,7 +42,7 @@ function AboutUs() {
                         <div className="bg-[#EFEEEE] rounded-[2rem] p-6 md:p-8 lg:p-10 flex items-center">
                             <div className="max-w-[70%]">
 
-                                <h2 className="text-xl md:text-2xl font-medium text-[#0a0e17]">
+                                <h2 className="text-xl md:text-2xl font-medium text-[#0a0e17] mb-20">
                                     AKOR Aesthetics redéfinit la technologie
                                     esthétique et élève les standards du soin.
                                 </h2>
@@ -86,8 +89,7 @@ function AboutUs() {
                 </div>
             </section>
 
-
-            <section className="w-full bg-[#f6f6f6] py-20 mt-32 mb-32">
+            <section className="w-full py-20 mt-20 mb-20">
                 <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6">
 
                     <div>
@@ -121,7 +123,25 @@ function AboutUs() {
                 </div>
             </section>
 
-            <section className="w-full bg-[#F6F6F6] py-10 md:py-14">
+            <section className="w-full py-16 lg:py-24">
+                <div className="px-6 lg:px-12 xl:px-40 text-center">
+
+                    {/* Conteneur vidéo responsif */}
+                    <div className="relative w-full max-w-7xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-lg">
+                        <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src="https://www.youtube.com/embed/vaNSulW1_l8?si=v2XgjV6vIsbtni73"
+                            title="Présentation produit"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
+                    </div>
+                </div>
+            </section>
+
+
+            <section className="w-full py-10 md:py-14">
                 <div className="mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 md:gap-8 items-stretch">
 
@@ -168,38 +188,44 @@ function AboutUs() {
                 </div>
             </section>
 
-            <section className="w-full bg-[#f6f6f6] mt-32 mb-32 flex justify-center">
+            <section className="w-full mt-32 mb-32 flex justify-center">
                 <img src="/about-us/partners.png" alt="" style={{ width: '100%' }} />
             </section>
 
+            <section className="w-full mt-32 mb-32 flex justify-center">
+                <img src="/about-us/world.png" alt="" style={{ width: '100%' }} />
+            </section>
 
+            <section className="w-full">
+                <div>
+                    <div className="grid xl:grid-cols-2 gap-10 items-center rounded-[2rem] p-8 lg:p-12">
 
-            <section className="w-full flex justify-center mb-32 mt-64">
-                <div className="relative w-[95%] rounded-[1.5rem] overflow-hidden">
-                    {/* Image */}
-                    <img
-                        src="/home/hero-3.png"
-                        alt="Médecins"
-                        className="w-full h-auto object-cover"
-                    />
+                            <img
+                                src="/about-us/hero-4.png"
+                                alt="Clients accompagnés par AKOR"
+                                className="w-full h-full object-cover"
+                            />
 
-                    {/* Texte superposé */}
-                    <div className="absolute inset-0 flex items-center justify-end pr-10">
-                        <div className="text-right max-w-md">
-                            <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-medium leading-snug">
-                                Boostez votre activité avec
-                                <br /> nos solutions intelligentes.
+                        <div className="bg-[#EFEEEE] rounded-[2.5rem] h-full flex flex-col justify-center p-8 lg:p-12">
+                            <h2 className="text-[#0A0F1C] text-2xl lg:text-3xl font-semibold mb-6">
+                                Nos axes d’excellence : Découvrez comment AKOR accompagne ses clients à chaque étape
                             </h2>
-
-                            <button
-                                className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-6 py-2 text-sm font-medium text-black hover:bg-gray-100 transition"
-                            >
-                                Contactez-nous
-                            </button>
+                            <p className="text-[#0A0F1C]/70 leading-relaxed mb-4 mt-8">
+                                Chez AKOR, nous mettons l’accent sur deux axes essentiels pour garantir votre
+                                satisfaction. Marketing : nous vous aidons à valoriser vos services et à promouvoir vos
+                                soins grâce à des solutions adaptées et efficaces.
+                            </p>
+                            <p className="text-[#0A0F1C]/70 leading-relaxed">
+                                SAV / Garantie : nous assurons un suivi complet et une assistance technique rapide pour
+                                que vos équipements restent performants et fiables à long terme.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <Deposition />
+            <Contact />
         </>
     )
 }

@@ -265,7 +265,7 @@ function Home() {
                         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A0F1C]/60 via-[#0A0F1C]/35 to-transparent" />
 
                         {/* Contenu superposé */}
-                        <div className="absolute inset-0 px-10 lg:px-14 pt-14 pb-14">
+                        <div className="absolute inset-0 px-10 xl:px-14 xl:pt-14 pb-14">
                             {/* LISTE visible uniquement en desktop */}
                             <ul className="space-y-4 hidden xl:block">
                                 {items.map((it, i) => {

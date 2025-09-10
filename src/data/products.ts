@@ -1,58 +1,58 @@
 export interface ProductsData {
     id: number;
-    type: string;
+    types: string[];
     title: string;
     image: string;
-    description: string; // utilisé sur la Home
+    description: string;
 }
 
 export const productsData: ProductsData[] = [
     {
         id: 1,
-        type: "FACE ANALYSER",
+        types: ["Analyseur de peau", "Soin de peau"],
         title: "Dermo Smart+",
         image: "/products/1.png",
         description:
-            "Analyse cutanée et capillaire de haute précision grâce à des capteurs avancés et des algorithmes intelligents.",
+            "Le Demo Smart+ allie performance et fiabilité, permettant aux professionnels de l’esthétique d’offrir des soins précis tout en optimisant leur temps et leur efficacité.",
     },
     {
         id: 2,
-        type: "FACE ANALYSER",
+        types: ["Analyseur de peau", "Soin de peau"],
         title: "SKIN/HAIR Kiosk 15 inch",
         image: "/products/2.png",
         description:
-            "Un kiosque compact pour analyser la peau et les cheveux avec des résultats clairs et rapides.",
+            "Le SKIN/HAIR Kiosk 15 inch offre aux professionnels un diagnostic précis et rapide, facilitant la personnalisation des soins et l’optimisation de l’expérience client.",
     },
     {
         id: 3,
-        type: "FACE ANALYSER",
+        types: ["Analyseur de peau", "Soin de peau"],
         title: "SKIN/HAIR Kiosk 21 inch",
         image: "/products/3.png",
         description:
-            "Version grand écran pour une expérience immersive et des diagnostics détaillés de la peau et du cuir chevelu.",
+            "Le SKIN/HAIR Kiosk 21 inch combine grand écran et technologie avancée pour un diagnostic encore plus détaillé, renforçant l’efficacité et la satisfaction client.",
     },
     {
         id: 4,
-        type: "AESTHETIC DEVICE",
+        types: ["Soin visage"],
         title: "Sponge Device",
         image: "/products/4.png",
         description:
-            "Nettoyage profond et hydratation de la peau grâce à des protocoles précis et non invasifs.",
+            "Le Sponge Device permet des soins ciblés et délicats, assurant une application optimale tout en respectant la sensibilité de la peau.",
     },
     {
         id: 5,
-        type: "MEDICAL AESTHETIC DEVICE",
-        title: "Deep Wave",
+        types: ["Soin corps", "Objectif minceur"],
+        title: "DeepWave",
         image: "/products/5.png",
         description:
-            "Technologie par ondes pour stimuler le derme et améliorer visiblement la fermeté et l’élasticité.",
+            "Le DeepWave utilise des technologies de pointe pour stimuler en profondeur les tissus, offrant des résultats visibles et durables pour les traitements esthétiques.",
     },
     {
         id: 6,
-        type: "MEDICAL AESTHETIC DEVICE",
+        types: ["Soin visage"],
         title: "Plamon",
         image: "/products/6.png",
         description:
-            "Analyse haute précision de la peau et du cuir chevelu avec diagnostic détaillé et recommandations personnalisées.",
+            "Le Plamon est conçu pour fournir des soins professionnels précis, alliant sécurité, performance et confort pour le praticien et le client.",
     },
 ];
