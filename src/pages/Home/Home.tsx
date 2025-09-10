@@ -12,7 +12,7 @@ function Home() {
             productsData.map(p => ({
                 n: String(p.id).padStart(2, "0"), // "01"..."06"
                 title: p.title,
-                type: p.type,
+                type: p.types,
                 desc: p.description,
                 image: p.image,
                 to: `/product/${p.id}`,
