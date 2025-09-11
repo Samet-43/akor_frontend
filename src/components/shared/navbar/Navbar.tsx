@@ -44,7 +44,7 @@ function Navbar() {
                                 >
                                     Nos technologies
                                     <svg
-                                        className="size-4 transition-transform group-hover:rotate-180"
+                                        className="hidden xl:block size-4 transition-transform group-hover:rotate-180 "
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
