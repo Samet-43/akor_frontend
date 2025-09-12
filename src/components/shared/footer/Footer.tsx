@@ -9,7 +9,7 @@ function Footer() {
                 <img
                     src="/footer/bg_footer.png"
                     alt="Footer background"
-                    className="absolute inset-0 z-10 w-full h-full object-cover"
+                    className="absolute inset-0 z-10 w-full h-full"
                 />
 
                 {/* Logo centré en haut — toujours au-dessus */}
@@ -260,20 +260,20 @@ function Footer() {
                             {/* Col 3 — Produits */}
                             <div className="flex-1 min-w-[12rem] max-w-[20rem] order-3">
                                 <ul className="space-y-6 text-[clamp(0.9rem,1.1vw,1rem)] leading-[1.6]">
-                                    <li><Link to="/product/1" className="hover:opacity-80">DermoSmart</Link></li>
-                                    <li><Link to="/product/2" className="hover:opacity-80">SKIN/HAIR Kiosk 15 inch</Link></li>
-                                    <li><Link to="/product/3" className="hover:opacity-80">SKIN/HAIR Kiosk 21 inch</Link></li>
-                                    <li><Link to="/product/4" className="hover:opacity-80">Sponge Device</Link></li>
-                                    <li><Link to="/product/5" className="hover:opacity-80">DeepWave</Link></li>
-                                    <li><Link to="/product/6" className="hover:opacity-80">Plamon</Link></li>
+                                    <li><Link to="/products/1" className="hover:opacity-80">DermoSmart</Link></li>
+                                    <li><Link to="/products/2" className="hover:opacity-80">SKIN/HAIR Kiosk 15 inch</Link></li>
+                                    <li><Link to="/products/3" className="hover:opacity-80">SKIN/HAIR Kiosk 21 inch</Link></li>
+                                    <li><Link to="/products/4" className="hover:opacity-80">Sponge Device</Link></li>
+                                    <li><Link to="/products/5" className="hover:opacity-80">DeepWave</Link></li>
+                                    <li><Link to="/products/6" className="hover:opacity-80">Plamon</Link></li>
                                 </ul>
                             </div>
 
                             {/* Col 4 — Newsletter */}
                             <div className="flex-1 max-w-[24rem] order-4">
                                 <div className="space-y-6">
-                                    <h4 className="text-[clamp(1rem,1.4vw,1.125rem)] font-medium">
-                                        Restez connecté <span className="opacity-80">à l’innovation esthétique</span>
+                                    <h4 className="text-[clamp(1rem,1.4vw,1.5rem)] text-[#f6f6f6]">
+                                        Restez connecté <span className="font-light text-[#F6F6F6]/50">à l’innovation esthétique</span>
                                     </h4>
                                     <form className="relative">
                                         <label htmlFor="newsletter-email" className="sr-only">Email</label>
@@ -292,50 +292,39 @@ function Footer() {
                                         </button>
                                     </form>
                                     <p className="text-[clamp(0.7rem,0.9vw,0.875rem)] text-[#f6f6f6]/60">
-                                        Inscrivez-vous pour recevoir nos nouveautés — Sans spam, promis !
+                                        Sans spam, promis !
                                     </p>
+                                </div>
+
+                                {/* Rangée 2 : Brochure à gauche / Form à droite */}
+                                <div className="mt-10">
+                                    <div className="flex flex-row">
+                                        <div>
+                                            <img src="/footer/akor.png" alt=""
+                                                className="h-auto w-20"
+                                            />
+                                        </div>
+                                        <div className="block max-w-[55%] ml-6 mt-4 text-lg">
+                                            <span className="text-[#F6F6F6]">Télécharger notre Brochure</span>
+                                            <span className="text-[#F6F6F6]/50"> complète et explorez l'univers Akor.</span>
+                                        </div>
+                                    </div>
+
+
+                                    <a href="#" download className="
+                                                    inline-flex items-center gap-3 rounded-full
+                                                    bg-[#FFFFFF]/20 text-[#F6F6F6] px-4 py-3 mt-8
+                                                    text-[clamp(0.95rem,1.2vw,1rem)] font-medium
+                                                    hover:opacity-90 transition w-full xl:w-auto"
+
+                                    >
+                                        <i className="fa-solid fa-download"></i>
+                                        Télécharger
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Rangée 2 : Brochure à gauche / Form à droite */}
-                        <div className="mt-10 flex flex-col xl:flex-row justify-between xl:items-stretch gap-6 w-full">
-
-                            <a
-                                href="#"
-                                download
-                                className="inline-flex items-center gap-3 rounded-full bg-[#F6F6F6] text-[#0A0F1C] px-4 py-3 mt-4 text-[clamp(0.95rem,1.2vw,1rem)] font-medium hover:opacity-90 transition w-full xl:w-auto"
-
-                            >
-                                <i className="fa-solid fa-file-arrow-down" />
-                                Télécharger la brochure
-                            </a>
-
-                            {/* Formulaire simple à droite */}
-                            <form className="w-full xl:w-auto flex flex-col xl:flex-row gap-3">
-                                <input
-                                    type="text"
-                                    placeholder="Votre nom"
-                                    className="h-11 min-w-[12rem] md:min-w-[14rem] px-4 rounded-full bg-transparent border border-[#f6f6f6]/35 placeholder-[#f6f6f6]/65 text-[#f6f6f6] outline-none focus:border-[#f6f6f6]/70 transition"
-                                />
-                                <input
-                                    type="email"
-                                    placeholder="Votre email"
-                                    className="h-11 min-w-[12rem] md:min-w-[14rem] px-4 rounded-full bg-transparent border border-[#f6f6f6]/35 placeholder-[#f6f6f6]/65 text-[#f6f6f6] outline-none focus:border-[#f6f6f6]/70 transition"
-                                />
-                                <textarea
-                                    placeholder="Votre message"
-                                    rows={3}
-                                    className="w-full md:min-w-[20rem] px-4 py-2 rounded-xl bg-transparent border border-[#f6f6f6]/35 placeholder-[#f6f6f6]/65 text-[#f6f6f6] outline-none focus:border-[#f6f6f6]/70 transition resize-none"
-                                />
-                                <button
-                                    type="submit"
-                                    className="h-11 px-6 rounded-full bg-gradient-to-b from-[#252834] to-[#0A0F1C] text-white hover:opacity-90 transition"
-                                >
-                                    Envoyer
-                                </button>
-                            </form>
-                        </div>
                     </div>
 
                     {/* Bas de page : reste toujours visible et ne recouvre rien */}
