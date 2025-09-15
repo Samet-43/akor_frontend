@@ -1,6 +1,7 @@
 function Contact() {
     return (
         <>
+            {/*TEXTE AVANT CONTACT*/}
             <section className="w-full bg-[#f6f6f6] py-20 mt-20">
                 <div className="max-w-4xl mx-auto text-center px-6">
                     <h2 className="text-2xl md:text-5xl text-[#0a0e17] font-semibold">
@@ -10,6 +11,7 @@ function Contact() {
                 </div>
             </section>
 
+            {/*CONTACT*/}
             <section className="w-full bg-[#f6f6f6]">
                 <div className="mx-auto px-6">
                     {/* 2 colonnes qui prennent une hauteur un peu réduite */}
@@ -119,6 +121,7 @@ function Contact() {
                 </div>
             </section>
 
+            {/*STATS*/}
             <section className="w-full bg-[#f6f6f6] py-20 mt-20 mb-20">
                 <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6">
 
@@ -153,10 +156,12 @@ function Contact() {
                 </div>
             </section>
 
+            {/*WORLD*/}
             <section className="w-full mt-32 mb-32 flex justify-center">
                 <img src="/about-us/world.png" alt="" style={{ width: '100%' }} />
             </section>
 
+            {/*NEWSLETTER*/}
             <section className="w-full pb-16 lg:pb-24">
                 <div className="px-6 lg:px-12 xl:px-40 text-center text-xl lg:text-2xl font-semibold">
                     {/* Texte principal */}

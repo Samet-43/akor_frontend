@@ -5,6 +5,7 @@ import Contact from "../../components/shared/contact/Contact.tsx"
 function Products() {
     return (
         <>
+            {/*HERO*/}
             <section className="relative w-full">
                 {/* Fond */}
                 <img
@@ -55,6 +56,7 @@ function Products() {
                 </div>
             </section>
 
+            {/*LISTE DES PRODUITS*/}
             <section className="w-full mb-32">
                 {/* 40px entre chaque produit */}
                 <div className="px-6 lg:px-12 xl:px-20 space-y-10">

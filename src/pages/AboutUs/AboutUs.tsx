@@ -4,6 +4,7 @@ import Deposition from "../../components/shared/deposition/Deposition.tsx"
 function AboutUs() {
     return (
         <>
+            {/*Hero*/}
             <section className="relative w-full">
                 {/* Image */}
                 <img
@@ -34,6 +35,7 @@ function AboutUs() {
                 </div>
             </section>
 
+            {/*TECHNOLOGIE*/}
             <section className="w-full py-10 md:py-14">
                 <div className="mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 md:gap-8 items-stretch">
@@ -89,6 +91,7 @@ function AboutUs() {
                 </div>
             </section>
 
+            {/*STATS*/}
             <section className="w-full py-20 mt-20 mb-20">
                 <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6">
 
@@ -123,6 +126,7 @@ function AboutUs() {
                 </div>
             </section>
 
+            {/*VIDEO*/}
             <section className="w-full py-16 lg:py-24">
                 <div className="px-6 lg:px-12 xl:px-40 text-center">
 
@@ -140,7 +144,7 @@ function AboutUs() {
                 </div>
             </section>
 
-
+            {/*FOCUS CLIENT*/}
             <section className="w-full py-10 md:py-14">
                 <div className="mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 md:gap-8 items-stretch">
@@ -188,14 +192,17 @@ function AboutUs() {
                 </div>
             </section>
 
+            {/*PARTENAIRES & MONDE*/}
             <section className="w-full mt-32 mb-32 flex justify-center">
                 <img src="/about-us/partners.png" alt="" style={{ width: '100%' }} />
             </section>
 
+            {/*WORLD*/}
             <section className="w-full mt-32 mb-32 flex justify-center">
                 <img src="/about-us/world.png" alt="" style={{ width: '100%' }} />
             </section>
 
+            {/*AXES D'EXCELLENCE*/}
             <section className="w-full">
                 <div>
                     <div className="grid xl:grid-cols-2 gap-10 items-center rounded-[2rem] p-8 lg:p-12">

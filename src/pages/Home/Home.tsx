@@ -213,7 +213,7 @@ function Home() {
 
             {/*DEMO*/}
             <section className="w-full flex justify-center mt-64">
-                <div className="w-[95%] mx-auto">
+                <div className="w-[90%] mx-auto">
                     {/* En-tête */}
                     <header className="mb-10 flex items-start justify-between gap-6">
                         <div className="max-w-[40rem]">
