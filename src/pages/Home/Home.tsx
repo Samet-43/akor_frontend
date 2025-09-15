@@ -68,6 +68,7 @@ function Home() {
 
     return (
         <>
+
             {/*HERO*/}
             <section className="relative w-full flex justify-center">
                 {/* Image hero */}
@@ -77,7 +78,7 @@ function Home() {
                     className="w-[95%] h-auto"
                 />
 
-                {/* Assombrissement léger pour mobile uniquement */}
+                {/* Assombrissement léger pour mobile uniquement (lisibilité) */}
                 <div className="absolute inset-0 md:hidden bg-gradient-to-r from-black/30 to-transparent pointer-events-none rounded-[1rem]"></div>
 
                 {/* Texte superposé */}
@@ -133,19 +134,24 @@ function Home() {
 
             {/*MACHINA*/}
             <section className="w-full flex justify-center mt-64">
+
                 <div className="w-[90vw] mx-auto grid grid-cols-4 grid-rows-2 gap-6 xl:h-[40rem] h-[34rem]">
-                    {/* Images */}
+                    {/* div1 : image 1 */}
                     <div className="rounded-[3rem] overflow-hidden">
                         <img src="/home/machina/image-1.png" alt="Image 1" className="w-full h-full object-cover" />
                     </div>
+
+                    {/* div2 : image 2 */}
                     <div className="rounded-[3rem] overflow-hidden col-start-1 row-start-2">
                         <img src="/home/machina/image-2.png" alt="Image 2" className="w-full h-full object-cover" />
                     </div>
+
+                    {/* div3 : grande image (hauteur max de la grille) */}
                     <div className="row-span-2 col-start-2 row-start-1 rounded-[3rem] overflow-hidden">
                         <img src="/home/machina/image-3.png" alt="Image 3" className="w-full h-full object-cover" />
                     </div>
 
-                    {/* Texte */}
+                    {/* div4 : texte (au milieu à droite) */}
                     <div className="col-span-2 row-span-2 col-start-3 row-start-1 flex items-center justify-center h-full">
                         <div className="max-w-xl space-y-6">
                             <div className="font-semibold text-3xl xl:text-4xl leading-snug text-[#0A0F1C]">
@@ -153,7 +159,8 @@ function Home() {
                             </div>
                             <div className="text-base xl:text-lg leading-relaxed text-[#0A0F1C]/70 my-12">
                                 Découvrez une sélection de nos équipements haut de gamme, conçus pour allier performance,
-                                innovation et rentabilité.
+                                innovation et rentabilité. Chaque machine est pensée pour répondre aux besoins des professionnels
+                                exigeants du secteur esthétique et médical.
                             </div>
                             <Link
                                 to="/products"
@@ -163,6 +170,78 @@ function Home() {
                             </Link>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/*BELGIUM*/}
+            <section className="w-full flex justify-center my-50">
+                <div className="w-[97%] mx-auto">
+                    {/* Bloc texte centré */}
+                    <div className="text-center">
+                        <p className="text-3xl font-semibold mb-16">
+                            100% Expertise Belge 🇧🇪, 100% Innovation
+                        </p>
+
+                        <h2
+                            className="font-[Montserrat] font-normal
+                                       text-[26px] leading-[40.32px] tracking-[-0.03em]
+                                       text-[#0A0F1C]"
+                        >
+                            Innovation, expertise et service sur mesure
+                        </h2>
+
+                        <p
+                            className="mt-2 font-[Montserrat] font-normal
+                                       text-[26px] leading-[40.32px] tracking-[-0.03em]
+                                       text-[#0A0F1C]/70"
+                        >
+                            bien plus qu'un équipement{" "}
+                            <img
+                                src="/home/image-text-1.png"
+                                alt=""
+                                className="inline-block px-2"
+                            />
+
+                        </p>
+
+                        <p
+                            className="font-[Montserrat] font-normal
+                                       text-[26px] leading-[40.32px] tracking-[-0.03em]
+                                       text-[#0A0F1C]/70"
+                        >
+                            un partenariat pour{" "}
+                            <img
+                                src="/home/image-text-2.png"
+                                alt=""
+                                className="inline-block px-2"
+                            />
+                            vos projets esthétiques.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/*MADE IN KOREA*/}
+            <section className="w-full flex justify-center mt-64">
+                {/* Cartes */}
+                <div className="grid gap-6 md:grid-cols-2 md:gap-8 w-[95vw]">
+                    {/* Carte 1 */}
+                    <figure className="relative overflow-hidden rounded-[1.5rem]">
+                        <img
+                            src="/home/image-1.png"
+                            alt="Made in Korea"
+                            className="w-full h-auto object-cover"
+                        />
+                    </figure>
+
+                    {/* Carte 2 */}
+                    <figure className="relative overflow-hidden rounded-[1.5rem]">
+                        <img
+                            src="/home/image-2.png"
+                            alt="Technologies innovantes"
+                            className="w-full h-auto object-cover"
+                        />
+                    </figure>
                 </div>
             </section>
 
@@ -312,6 +391,274 @@ function Home() {
                                 </motion.div>
                             </AnimatePresence>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/*CERTIFICATE*/}
+            <section className="w-full flex justify-center mt-64">
+                <div className="w-[90vw] mx-auto flex flex-col gap-10">
+                    {/* Partie haute : titre + lien */}
+                    <div className="flex items-start justify-between ">
+                        <h3 className="text-xl xl:text-3xl leading-[1.35] text-[#0A0F1C] max-w-[60vw] xl:max-w-[35vw]">
+                            <span className="font-normal">
+                              AKOR Aesthetics redéfinit la technologie esthétique et élève les standards du soin.
+                            </span>
+                            <span className="font-normal text-[#0A0F1C]/50">
+                              {" "}Nous concevons des solutions intelligentes qui allient innovation et performance terrain.
+                            </span>
+                        </h3>
+
+                        <Link
+                            to="/product"
+                            className="self-end mb-1 inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
+                        >
+                            VOIR PLUS
+                            <img src="/home/link.svg" alt="" />
+                        </Link>
+                    </div>
+
+                    {/* Partie basse : liste + image */}
+                    <div className="flex gap-10 mt-20">
+                        {/* Colonne gauche */}
+                        <div className="flex-1 flex flex-col items-center justify-center gap-8">
+                            {/* Item 1 */}
+                            <div className="flex items-start gap-4">
+                                <img src="/home/certificate.png" alt="Certification" className="h-15 w-15"/>
+                                <div className="text-[#0A0F1C]">
+                                    <div className="font-medium text-xl xl:text-2xl">Certification CA</div>
+                                    <div className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
+                                        Une garantie officielle de conformité et de sécurité, reconnue en Europe entière.
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Item 2 */}
+                            <div className="flex items-start gap-4">
+                                <img src="/home/diamond.png" alt="Certification" className="h-15 w-15"/>
+                                <div className="text-[#0A0F1C]">
+                                    <div className="font-medium text-xl xl:text-2xl">Fabrication Coréenne</div>
+                                    <div className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
+                                        Des équipements issus du savoir-faire technologique coréen, réputé mondialement.
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Item 3 */}
+                            <div className="flex items-start gap-4">
+                                <img src="/home/heart.png" alt="Certification" className="h-15 w-15"/>
+                                <div className="text-[#0A0F1C]">
+                                    <div className="font-medium text-xl xl:text-2xl">Expertise médicale</div>
+                                    <div className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
+                                        Une expérience confirmée dans l’esthétique médicale et professionnelle avancée.
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Item 4 */}
+                            <div className="flex items-start gap-4">
+                                <img src="/home/light.png" alt="Certification" className="h-15 w-15"/>
+                                <div className="text-[#0A0F1C]">
+                                    <div className="font-medium text-xl xl:text-2xl">Innovation et fiabilité</div>
+                                    <div className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
+                                        Des machines performantes et conçues pour durer, alliant puissance et précision.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Colonne droite */}
+                        <div className="flex-1 rounded-[1.5rem] overflow-hidden">
+                            <img
+                                src="/home/image-6.png"
+                                alt="Accueil AKOR Aesthetics"
+                                className="w-full h-auto object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            {/*EXPERTISE*/}
+            <section className="w-full flex justify-center mt-64">
+                <div className="w-[95%] mx-auto">
+                    {/* Titre unique (début en gras) */}
+                    <p className="text-center text-[#0A0F1C] text-[22px] sm:text-[24px] leading-10 max-w-[48rem] mx-auto">
+                        <span className="font-medium">Nous vous accompagnons avec expertise</span> <span className="text-[#0A0F1C]/50">et conseils personnalisés, de la sélection de matériels <br/> innovants à la formation et au support</span>
+                    </p>
+
+                    {/* Grille de cartes — largeur contenue + images moins hautes */}
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-[90vw] mx-auto mt-20">
+                        {/* Carte 1 */}
+                        <article className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
+                            <div className="h-[200px] md:h-[220px] lg:h-[230px]">
+                                <img
+                                    src="/home/expertise/image-1.jpg"
+                                    alt="Conseil personnalisé"
+                                    className="w-full h-full object-cover rounded-[2rem]"
+                                />
+                            </div>
+                            <div className="p-6 text-left">
+                                <h4 className="font-[Montserrat] font-medium text-lg sm:text-xl text-[#0A0F1C] mb-8">
+                                    Conseil personnalisé
+                                </h4>
+                                <p className="mt-2 text-lg leading-relaxed text-[#0A0F1C]/70">
+                                    Nous analysons vos besoins et vous guidons vers la solution la plus adaptée.
+                                </p>
+                            </div>
+                        </article>
+
+                        {/* Carte 2 */}
+                        <article className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
+                            <div className="h-[200px] md:h-[220px] lg:h-[230px]">
+                                <img
+                                    src="/home/expertise/image-2.jpg"
+                                    alt="Accompagnement complet"
+                                    className="w-full h-full object-cover rounded-[2rem]"
+                                />
+                            </div>
+                            <div className="p-6 text-left">
+                                <h4 className="font-[Montserrat] font-medium text-lg sm:text-xl text-[#0A0F1C] mb-8">
+                                    Achat
+                                </h4>
+                                <p className="mt-2 text-lg leading-relaxed text-[#0A0F1C]/70 mb-6">
+                                    Un accompagnement clair et transparent pour un investissement en toute confiance.
+                                </p>
+                            </div>
+                        </article>
+
+                        {/* Carte 3 */}
+                        <article className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
+                            <div className="h-[200px] md:h-[220px] lg:h-[230px]">
+                                <img
+                                    src="/home/expertise/image-3.jpg"
+                                    alt="Service Après-Vente"
+                                    className="w-full h-full object-cover rounded-[2rem]"
+                                />
+                            </div>
+                            <div className="p-6 text-left">
+                                <h4 className="font-[Montserrat] font-medium text-lg sm:text-xl text-[#0A0F1C] mb-8">
+                                    Installation et formation
+                                </h4>
+                                <p className="mt-2 text-lg leading-relaxed text-[#0A0F1C]/70">
+                                    Mise en place rapide et formation complète
+                                    pour une prise en main optimale.
+                                </p>
+                            </div>
+                        </article>
+
+                        {/* Carte 4 */}
+                        <article className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
+                            <div className="h-[200px] md:h-[220px] lg:h-[230px]">
+                                <img
+                                    src="/home/expertise/image-4.png"
+                                    alt="Service Après-Vente"
+                                    className="w-full h-full object-cover rounded-[2rem]"
+                                />
+                            </div>
+                            <div className="p-6 text-left">
+                                <h4 className="font-[Montserrat] font-medium text-lg sm:text-xl text-[#0A0F1C] mb-8">
+                                    Service Après-Vente
+                                </h4>
+                                <p className="mt-2 text-lg leading-relaxed text-[#0A0F1C]/70">
+                                    Un suivi réactif et durable pour assurer la performance de vos équipements.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            {/*EQUIPMENT*/}
+            <section className="w-full flex justify-center mt-64">
+                <div className="w-[100vw] mx-auto">
+                    {/* Titre */}
+                    <div className="text-center max-w-[45rem] mx-auto">
+                        <p className="text-[#0A0F1C] text-3xl leading-10">
+                            Découvrez l’excellence de nos équipements,
+                            <span className="text-[#0A0F1C]/60">des technologies esthétiques conçues pour durer et performer.</span>
+                        </p>
+                    </div>
+
+                    {/* espace */}
+                    <div className="mt-20"></div>
+
+                    {/* Ligne 1 */}
+                    <div className="relative overflow-hidden">
+                        <div className="flex flex-nowrap gap-6 min-w-max animate-[scroll-x_35s_linear_infinite]">
+                            {[1,2,3,4].map(i => (
+                                <figure key={`r1-a-${i}`} className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden">
+                                    <img src={`/home/equipment/image-${i}.jpg`} alt="" className="w-full h-full object-cover" />
+                                </figure>
+                            ))}
+                            {[1,2,3,4].map(i => (
+                                <figure key={`r1-b-${i}`} className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden">
+                                    <img src={`/home/equipment/image-${i}.jpg`} alt="" className="w-full h-full object-cover" />
+                                </figure>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* espace */}
+                    <div className="mt-6"></div>
+
+                    {/* Ligne 2 (sens inverse) */}
+                    <div className="relative overflow-hidden">
+                        <div className="flex flex-nowrap gap-6 min-w-max animate-[scroll-x-rev_35s_linear_infinite]">
+                            {[5,6,7,8].map(i => (
+                                <figure key={`r2-a-${i}`} className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden">
+                                    <img src={`/home/equipment/image-${i}.jpg`} alt="" className="w-full h-full object-cover" />
+                                </figure>
+                            ))}
+                            {[5,6,7,8].map(i => (
+                                <figure key={`r2-b-${i}`} className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden">
+                                    <img src={`/home/equipment/image-${i}.jpg`} alt="" className="w-full h-full object-cover" />
+                                </figure>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* CSS pur pour l’animation */}
+                <style>{`
+                        @keyframes scroll-x {
+                          0%   { transform: translateX(0); }
+                          100% { transform: translateX(-50%); }
+                        }
+                        @keyframes scroll-x-rev {
+                          0%   { transform: translateX(-50%); }
+                          100% { transform: translateX(0); }
+                        }
+                      `}</style>
+            </section>
+
+            {/*BOOK A DEMO*/}
+            <section className="w-full flex justify-center mt-64">
+                <div className="w-full mx-auto bg-[#0A0F1C]/30">
+                    <div className="flex items-center justify-between py-12">
+                        {/* gauche */}
+                        <a href="#" className="uppercase tracking-[0.2em] text-[#F9F9F9] text-3xl xl:text-6xl">
+                            Instagram
+                        </a>
+
+                        {/* étoile */}
+                        <img src="/home/star.png" alt=""/>
+
+                        {/* centre */}
+                        <div className="text-center">
+                            <button className="uppercase underline underline-offset-20 text-[#F9F9F9] font-semibold text-3xl xl:text-6xl">
+                                Book une demo
+                            </button>
+                        </div>
+
+                        {/* étoile */}
+                        <img src="/home/star.png" alt=""/>
+
+                        {/* droite */}
+                        <a href="#" className="uppercase tracking-[0.2em] text-[#F9F9F9] text-3xl xl:text-6xl">
+                            Linkedin
+                        </a>
                     </div>
                 </div>
             </section>
