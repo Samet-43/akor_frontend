@@ -1,6 +1,7 @@
 export interface ProductsData {
     id: number;
     types: string[];
+    activity: string;
     title: string;
     image: string;
     description: string;
@@ -10,6 +11,7 @@ export const productsData: ProductsData[] = [
     {
         id: 1,
         types: ["Analyseur de peau", "Soin de peau"],
+        activity: "Esthétique",
         title: "Dermo Smart+",
         image: "/products/1.png",
         description:
@@ -18,6 +20,7 @@ export const productsData: ProductsData[] = [
     {
         id: 2,
         types: ["Analyseur de peau", "Soin de peau"],
+        activity: "Esthétique",
         title: "SKIN/HAIR Kiosk 15 inch",
         image: "/products/2.png",
         description:
@@ -26,6 +29,7 @@ export const productsData: ProductsData[] = [
     {
         id: 3,
         types: ["Analyseur de peau", "Soin de peau"],
+        activity: "Esthétique",
         title: "SKIN/HAIR Kiosk 21 inch",
         image: "/products/3.png",
         description:
@@ -34,6 +38,7 @@ export const productsData: ProductsData[] = [
     {
         id: 4,
         types: ["Soin visage"],
+        activity: "Analyse",
         title: "Sponge Device",
         image: "/products/4.png",
         description:
@@ -42,6 +47,7 @@ export const productsData: ProductsData[] = [
     {
         id: 5,
         types: ["Soin corps", "Objectif minceur"],
+        activity: "Analyse",
         title: "DeepWave",
         image: "/products/5.png",
         description:
@@ -50,6 +56,7 @@ export const productsData: ProductsData[] = [
     {
         id: 6,
         types: ["Soin visage"],
+        activity: "Analyse",
         title: "Plamon",
         image: "/products/6.png",
         description:

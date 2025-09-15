@@ -4,7 +4,7 @@ import Deposition from "../../components/shared/deposition/Deposition.tsx"
 function AboutUs() {
     return (
         <>
-            {/*Hero*/}
+            {/*HERO*/}
             <section className="relative w-full">
                 {/* Image */}
                 <img

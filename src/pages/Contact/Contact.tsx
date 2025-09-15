@@ -1,8 +1,10 @@
+import { productsData } from "../../data/products.ts";
+
 function Contact() {
     return (
         <>
             {/*TEXTE AVANT CONTACT*/}
-            <section className="w-full bg-[#f6f6f6] py-20 mt-20">
+            <section className="w-full py-20 mt-20">
                 <div className="max-w-4xl mx-auto text-center px-6">
                     <h2 className="text-2xl md:text-5xl text-[#0a0e17] font-semibold">
                         Élevons ensemble<br />
@@ -12,7 +14,7 @@ function Contact() {
             </section>
 
             {/*CONTACT*/}
-            <section className="w-full bg-[#f6f6f6]">
+            <section className="w-full pb-32 mb-50">
                 <div className="mx-auto px-6">
                     {/* 2 colonnes qui prennent une hauteur un peu réduite */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch h-[90vh]">
@@ -36,7 +38,7 @@ function Contact() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
                                         <label className="block text-sm font-medium text-[#0a0e17]">
-                                            Nom <span className="text-[#ff9f1c]">*</span>
+                                            Nom
                                         </label>
                                         <input
                                             type="text"
@@ -46,7 +48,7 @@ function Contact() {
                                     </div>
                                     <div>
                                         <label className="block text-sm font-medium text-[#0a0e17]">
-                                            Prénom <span className="text-[#ff9f1c]">*</span>
+                                            Prénom
                                         </label>
                                         <input
                                             type="text"
@@ -58,7 +60,47 @@ function Contact() {
 
                                 <div>
                                     <label className="block text-sm font-medium text-[#0a0e17]">
-                                        Email <span className="text-[#ff9f1c]">*</span>
+                                        Organisation / Poste
+                                    </label>
+                                    <select
+                                        className="mt-2 w-full rounded-full border border-gray-200 h-12 px-5 outline-none bg-white"
+                                        defaultValue=""
+                                    >
+                                        <option value="" disabled selected>
+                                            Votre entreprise ou poste
+                                        </option>
+                                        <option value="centre-esthetique">Centre esthétique</option>
+                                        <option value="pharmacie">Pharmacie / Parapharmacie</option>
+                                        <option value="coiffure">Salon de coiffure</option>
+                                        <option value="marque">Marque</option>
+                                        <option value="hotel-spa">Hôtel & Spa</option>
+                                        <option value="evenementiel">Événementiel</option>
+                                        <option value="autre">Autres</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-[#0a0e17]">
+                                        Machine concernée
+                                    </label>
+                                    <select
+                                        className="mt-2 w-full rounded-full border border-gray-200 h-12 px-5 outline-none bg-white"
+                                        defaultValue=""
+                                    >
+                                        <option value="" disabled selected>
+                                            Sélectionnez une machine
+                                        </option>
+                                        {productsData.map((p) => (
+                                            <option key={p.id} value={p.id}>
+                                                {p.title}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-[#0a0e17]">
+                                        Email
                                     </label>
                                     <input
                                         type="email"
@@ -78,6 +120,29 @@ function Contact() {
                                             type="tel"
                                             placeholder="x XXX XXX XXX"
                                             className="flex-1 h-full outline-none px-2 bg-transparent"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label className="block text-sm font-medium text-[#0a0e17]">
+                                            Adresse
+                                        </label>
+                                        <input
+                                            type="text"
+                                            placeholder="Rue, numéro, ville"
+                                            className="mt-2 w-full rounded-full border border-gray-200 h-12 px-5 outline-none"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-[#0a0e17]">
+                                            Code postal
+                                        </label>
+                                        <input
+                                            type="text"
+                                            placeholder="Ex : 1040"
+                                            className="mt-2 w-full rounded-full border border-gray-200 h-12 px-5 outline-none"
                                         />
                                     </div>
                                 </div>
@@ -122,7 +187,7 @@ function Contact() {
             </section>
 
             {/*STATS*/}
-            <section className="w-full bg-[#f6f6f6] py-20 mt-20 mb-20">
+            <section className="w-full py-20 mt-20 mb-20">
                 <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6">
 
                     <div>

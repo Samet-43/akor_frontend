@@ -250,67 +250,135 @@ function ProductDetail() {
             </section>
 
             {/*GAINS*/}
-            <section className="relative w-full py-32 mt-64 bg-[#C3CED5] ">
-                <div className="flex flex-col items-center text-center py-16">
+            <section className="relative w-full py-20 mt-64 bg-[#C3CED5]">
+
+                <div className="w-screen flex justify-center text-center mb-32">
                     <h2 className="text-[#0A0F1C] text-2xl xl:text-3xl leading-snug max-w-[36%]">
                         Estimez vos gains potentiels
-                        <span className="text-[#0A0F1C]/50"> et le temps nécessaire pour amortir votre investissement.</span>
+                        <span className="text-[#0A0F1C]/50">
+                            {" "}et le temps nécessaire pour amortir votre investissement.
+                        </span>
                     </h2>
                 </div>
+                <div className="px-6 xl:px-20 flex flex-col xl:flex-row justify-between items-center gap-16">
 
-                {/* Bloc central gains */}
-                <div className="bg-[#0A0F1C]/80 text-white rounded-[3rem] p-8 py-16 max-w-2xl mx-auto space-y-6 ">
-
-                    {/* Ligne 1 */}
-                    <div className="grid grid-cols-2 items-center">
-                        <p className="font-light text-lg">Prix d’une analyse</p>
-                        <div className="flex items-center justify-between bg-[#575C65] rounded-full px-4 py-4">
-                            <span className="text-xl xl:text-3xl pl-6">30</span>
-                            <span className="text-lg xl:text-2xl font-light pr-6">Euros</span>
-                        </div>
+                    {/* Partie gauche : Liste des avantages */}
+                    <div className="text-[#0A0F1C] space-y-6 max-w-[50%]">
+                        <ul className="list-disc list-inside space-y-4 text-xl">
+                            <li>Innovant, grâce à la technologie avancée de l'IA et de la RA</li>
+                            <li>Conseils de beauté personnalisés en quelques minutes</li>
+                            <li>Conversions plus élevées, entraînant une augmentation des ventes</li>
+                            <li>Expérience en magasin innovante</li>
+                            <li>Visibilité accrue de votre marque</li>
+                            <li>Mise en œuvre flexible</li>
+                        </ul>
                     </div>
 
-                    {/* Ligne 2 */}
-                    <div className="grid grid-cols-2 items-center">
-                        <p className="font-light text-lg">Nombre moyen d’analyses</p>
-                        <div className="flex items-center justify-between bg-[#575C65] rounded-full px-4 py-4">
-                            <span className="text-xl xl:text-3xl pl-6">4</span>
-                            <span className="text-lg xl:text-2xl font-light pr-6">Par jour</span>
+                    {/* Partie droite : Bloc central gains */}
+                    <div className="bg-[#0A0F1C]/80 text-white rounded-[3rem] p-8 py-16 max-w-2xl w-full space-y-6">
+
+                        {/* Ligne 1 */}
+                        <div className="grid grid-cols-2 items-center">
+                            <p className="font-light text-lg">Prix d’une analyse</p>
+                            <div className="flex items-center justify-between bg-[#575C65] rounded-full px-4 py-4">
+                                <span className="text-xl xl:text-3xl pl-6">30</span>
+                                <span className="text-lg xl:text-2xl font-light pr-6">Euros</span>
+                            </div>
                         </div>
+
+                        {/* Ligne 2 */}
+                        <div className="grid grid-cols-2 items-center">
+                            <p className="font-light text-lg">Nombre moyen d’analyses</p>
+                            <div className="flex items-center justify-between bg-[#575C65] rounded-full px-4 py-4">
+                                <span className="text-xl xl:text-3xl pl-6">4</span>
+                                <span className="text-lg xl:text-2xl font-light pr-6">Par jour</span>
+                            </div>
+                        </div>
+
+                        <hr className="border-gray-600 my-10" />
+
+                        {/* Ligne 3 */}
+                        <div className="grid grid-cols-2 items-center">
+                            <p className="font-light text-xl">Revenus journaliers</p>
+                            <div className="flex justify-end items-center gap-4">
+                                <span className="font-medium text-2xl xl:text-4xl">120</span>
+                                <span className="text-xl font-light px-12">Euros</span>
+                            </div>
+                        </div>
+
+                        {/* Ligne 4 */}
+                        <div className="grid grid-cols-2 items-center">
+                            <div className="text-xl">
+                                <p className="font-semibold">Revenus mensuels</p>
+                                <p className="text-sm font-light">(sur 22 jours ouvrés)</p>
+                            </div>
+                            <div className="flex justify-end items-center gap-4">
+                                <span className="font-medium text-2xl xl:text-4xl">2.640</span>
+                                <span className="text-xl font-light px-12">Euros</span>
+                            </div>
+                        </div>
+
+                        <hr className="border-gray-600" />
+
+                        {/* Résultat */}
+                        <p className="font-light">
+                            <span className="font-semibold">Résultat ✨:</span>
+                            <span className="font-medium"> En moins de 2 mois,</span> votre investissement dans le DermoSmart est amorti, et vous générez ensuite un bénéfice net.
+                        </p>
                     </div>
 
-                    <hr className="border-gray-600 my-10"/>
-
-                    {/* Ligne 3 */}
-                    <div className="grid grid-cols-2 items-center">
-                        <p className="font-light text-xl">Revenus journaliers</p>
-                        <div className="flex justify-end items-center gap-4">
-                            <span className="font-medium text-2xl xl:text-4xl">120</span>
-                            <span className="text-xl font-light px-12">Euros</span>
-                        </div>
-                    </div>
-
-                    {/* Ligne 4 */}
-                    <div className="grid grid-cols-2 items-center">
-                        <div className="text-xl">
-                            <p className="font-semibold">Revenus mensuels</p>
-                            <p className="text-sm font-light">(sur 22 jours ouvrés)</p>
-                        </div>
-                        <div className="flex justify-end items-center gap-4">
-                            <span className="font-medium text-2xl xl:text-4xl">2.640</span>
-                            <span className="text-xl font-light px-12">Euros</span>
-                        </div>
-                    </div>
-
-                    <hr className="border-gray-600" />
-
-                    {/* Résultat */}
-                    <p className="font-light">
-                        <span className="font-semibold">Résultat ✨:</span><span className="font-medium"> En moins de 2 mois,</span> votre investissement dans le DermoSmart est amorti, et vous générez ensuite un bénéfice net.
-                    </p>
                 </div>
-
             </section>
+
+            {/*Q&A*/}
+            <section className="relative w-full mt-64">
+                <div className="px-6 xl:px-10 flex xl:flex-row justify-between items-start gap-12">
+
+                    {/* Partie gauche */}
+                    <div className="max-w-[30vw] xl:max-w-[25vw] flex flex-col justify-start space-y-6">
+                        <h2 className="text-[#0A0F1C] text-xl xl:text-2xl">
+                            <span>Des questions sur DermoSmart ? </span>
+                            <span className="text-gray-500">
+                              Notre équipe est à votre disposition pour vous informer et vous accompagner.
+                            </span>
+                        </h2>
+                        <Link
+                            to="/contact"
+                            className="w-fit px-6 py-3 rounded-full bg-[#0A0F1C] text-white font-medium"
+                        >
+                            Contactez-nous →
+                        </Link>
+                    </div>
+
+                    {/* Partie droite : FAQ */}
+                    <div className="w-1/2 space-y-4">
+                        {[
+                            "Le DermoSmart est-il facile à utiliser ?",
+                            "Quels types de peau et de cheveux peut-il analyser ?",
+                            "Peut-on exporter les rapports pour les clients ?",
+                            "Nécessite-t-il un abonnement logiciel ?",
+                            "Quelle est la garantie de l’appareil ?",
+                        ].map((question, i) => (
+                            <Disclosure key={i}>
+                                {({ open }) => (
+                                    <div className="bg-[#EFEEEE] rounded-lg">
+                                        <DisclosureButton className="flex w-full justify-between items-center px-6 py-6 font-medium">
+                                            {question}
+                                            <ChevronDownIcon
+                                                className={`h-5 w-5 transition-transform ${open ? "rotate-180" : ""}`}
+                                            />
+                                        </DisclosureButton>
+                                        <DisclosurePanel className="px-6 pb-4 text-gray-600 text-sm">
+                                            Réponse à la question "{question}" (à remplir).
+                                        </DisclosurePanel>
+                                    </div>
+                                )}
+                            </Disclosure>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
 
             {/*TECHNICAL SHEET*/}
             <section className="relative w-full mt-32">
@@ -378,55 +446,6 @@ function ProductDetail() {
             </section>
 
             <Deposition />
-
-            {/*Q&A*/}
-            <section className="relative w-full mt-64">
-                <div className="px-6 xl:px-10 flex xl:flex-row justify-between items-start gap-12">
-
-                    {/* Partie gauche */}
-                    <div className="max-w-[30vw] xl:max-w-[25vw] flex flex-col justify-start space-y-6">
-                        <h2 className="text-[#0A0F1C] text-xl xl:text-2xl">
-                            <span>Des questions sur DermoSmart ? </span>
-                            <span className="text-gray-500">
-                              Notre équipe est à votre disposition pour vous informer et vous accompagner.
-                            </span>
-                        </h2>
-                        <Link
-                            to="/contact"
-                            className="w-fit px-6 py-3 rounded-full bg-[#0A0F1C] text-white font-medium"
-                        >
-                            Contactez-nous →
-                        </Link>
-                    </div>
-
-                    {/* Partie droite : FAQ */}
-                    <div className="w-1/2 space-y-4">
-                        {[
-                            "Le DermoSmart est-il facile à utiliser ?",
-                            "Quels types de peau et de cheveux peut-il analyser ?",
-                            "Peut-on exporter les rapports pour les clients ?",
-                            "Nécessite-t-il un abonnement logiciel ?",
-                            "Quelle est la garantie de l’appareil ?",
-                        ].map((question, i) => (
-                            <Disclosure key={i}>
-                                {({ open }) => (
-                                    <div className="bg-[#EFEEEE] rounded-lg">
-                                        <DisclosureButton className="flex w-full justify-between items-center px-6 py-6 font-medium">
-                                            {question}
-                                            <ChevronDownIcon
-                                                className={`h-5 w-5 transition-transform ${open ? "rotate-180" : ""}`}
-                                            />
-                                        </DisclosureButton>
-                                        <DisclosurePanel className="px-6 pb-4 text-gray-600 text-sm">
-                                            Réponse à la question "{question}" (à remplir).
-                                        </DisclosurePanel>
-                                    </div>
-                                )}
-                            </Disclosure>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             <Contact />
         </>
