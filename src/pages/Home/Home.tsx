@@ -229,7 +229,7 @@ function Home() {
                             className="self-center mt-1 inline-flex items-center gap-2 text-[#0A0F1C] text-md xl:text-lg hover:opacity-80"
                         >
                             VOIR PLUS
-                            <img src="/home/link.svg" alt="" className="hidden xl:block"/>
+                            <img src="/home/link.svg" alt="" className="hidden md:block"/>
                         </Link>
                     </header>
 
@@ -381,7 +381,7 @@ function Home() {
                             className="self-end md:self-auto inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
                         >
                             VOIR PLUS
-                            <img src="/home/link.svg" alt="" />
+                            <img src="/home/link.svg" alt="" className="hidden md:block"/>
                         </Link>
                     </div>
 
