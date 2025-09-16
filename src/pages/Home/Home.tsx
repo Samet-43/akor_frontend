@@ -251,7 +251,7 @@ function Home() {
                     {/* En-tête */}
                     <header className="mb-10 flex items-start justify-between gap-6">
                         <div className="max-w-[40rem]">
-                            <p className="font-[Montserrat] text-2xl leading-9 text-[#0A0F1C]">
+                            <p className="text-2xl leading-9 text-[#0A0F1C]">
                                 Découvrez des dispositifs esthétiques et médicaux <br/>
                                 <span className="text-[#0A0F1C]/50">
                                     de pointe, alliant innovation, fiabilité et expertise professionnelle
@@ -263,7 +263,7 @@ function Home() {
                             className="self-center mt-1 inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
                         >
                             VOIR PLUS
-                            <img src="/home/link.svg" alt=""/>
+                            <img src="/home/link.svg" alt="" className="hidden xl:block"/>
                         </Link>
                     </header>
 
