@@ -236,130 +236,237 @@ function Home() {
 
 
                     {/* Carte visuelle Esthétique */}
-                    <div className="relative overflow-hidden rounded-[1.5rem]">
-                        <img src="/home/hero-2.png" alt="" className="w-full h-auto object-cover" />
+                    <div className="mb-20">
+                        {/* --- Titre animé uniquement mobile --- */}
                         <AnimatePresence mode="wait">
-                            <motion.img
-                                key={activeEsthetique?.image}
-                                src={activeEsthetique?.image}
-                                alt={activeEsthetique?.title}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 1.05 }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
-                                className="absolute top-1/2 left-1/2 translate-y-[-30%] translate-x-[20%] max-h-[60%] max-w-[50%] w-auto object-contain pointer-events-none z-20"
-                            />
+                            <motion.div
+                                key={activeEsthetique?.title + "-mobile"}
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -8 }}
+                                transition={{ duration: 0.35, ease: "easeOut" }}
+                                className="block md:hidden mb-4"
+                            >
+                                <h4 className="font-medium text-2xl leading-[1.2] text-[#0A0F1C] text-center">
+                                    {activeEsthetique?.title}
+                                </h4>
+                            </motion.div>
                         </AnimatePresence>
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A0F1C]/60 via-[#0A0F1C]/35 to-transparent" />
-                        <div className="absolute inset-0 px-10 xl:px-14 xl:pt-14 pb-14">
-                            <ul className="space-y-4 hidden xl:block">
-                                {esthetiqueItems.map((it, i) => {
-                                    const isActive = i === indexEsthetique;
-                                    return (
-                                        <li key={it.n}>
-                                            <button
-                                                type="button"
-                                                onClick={() => setIndexEsthetique(i)}
-                                                className={[
-                                                    "w-full text-left transition flex items-center gap-5",
-                                                    isActive ? "opacity-100" : "opacity-60 hover:opacity-80",
-                                                ].join(" ")}
-                                            >
-                                                <span className="text-[#C7D3DA]/80">{it.n}</span>
-                                                <span className="font-[Montserrat] text-[20px] text-white">{it.title}</span>
-                                            </button>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
+
+                        <div className="relative overflow-hidden rounded-[1.5rem]">
+                            <img src="/home/hero-2.png" alt="" className="w-full h-auto object-cover" />
+
+                            {/* Produit animé */}
                             <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={activeEsthetique?.title}
-                                    initial={{ opacity: 0, y: 8 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -8 }}
-                                    transition={{ duration: 0.35, ease: "easeOut" }}
-                                    className="mt-20"
-                                >
-                                    <h4 className="text-white font-[Montserrat] font-medium text-[3rem] leading-[1.2]">
-                                        {activeEsthetique?.title}
-                                    </h4>
-                                    <p className="mt-5 max-w-[18rem] text-white/80 text-[14px] leading-[2]">
-                                        {activeEsthetique?.desc}
-                                    </p>
-                                    <Link
-                                        to={activeEsthetique?.to || "#"}
-                                        className="mt-7 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2.5 text-[13px] font-medium text-black hover:bg-white transition"
-                                    >
-                                        Découvrir →
-                                    </Link>
-                                </motion.div>
+                                <motion.img
+                                    key={activeEsthetique?.image}
+                                    src={activeEsthetique?.image}
+                                    alt={activeEsthetique?.title}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 1.05 }}
+                                    transition={{ duration: 0.4, ease: "easeOut" }}
+                                    className="absolute top-1/2 left-1/2 translate-y-[-30%] translate-x-[20%] max-h-[60%] max-w-[50%] w-auto object-contain pointer-events-none z-20"
+                                />
                             </AnimatePresence>
+
+                            {/* Contenu interne */}
+                            <div className="absolute inset-0 px-6 md:px-10 xl:px-14 xl:pt-14 pb-14">
+                                {/* Liste (desktop uniquement) */}
+                                <ul className="space-y-4 hidden xl:block">
+                                    {esthetiqueItems.map((it, i) => {
+                                        const isActive = i === indexEsthetique;
+                                        return (
+                                            <li key={it.n}>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setIndexEsthetique(i)}
+                                                    className={[
+                                                        "w-full text-left transition flex items-center gap-5",
+                                                        isActive ? "opacity-100" : "opacity-60 hover:opacity-80",
+                                                    ].join(" ")}
+                                                >
+                                                    <span className="text-[#C7D3DA]/80">{it.n}</span>
+                                                    <span className="text-[20px] text-white">{it.title}</span>
+                                                </button>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+
+                                {/* Bloc texte animé desktop */}
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={activeEsthetique?.title}
+                                        initial={{ opacity: 0, y: 8 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -8 }}
+                                        transition={{ duration: 0.35, ease: "easeOut" }}
+                                        className="mt-20 hidden md:block"
+                                    >
+                                        <h4 className="text-white font-medium text-[3rem] leading-[1.2]">
+                                            {activeEsthetique?.title}
+                                        </h4>
+                                        <p className="mt-5 max-w-[18rem] text-white/80 text-[14px] leading-[2]">
+                                            {activeEsthetique?.desc}
+                                        </p>
+                                        <Link
+                                            to={activeEsthetique?.to || "#"}
+                                            className="mt-7 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2.5 text-[13px] font-medium text-black hover:bg-white transition hidden xl:inline-flex"
+                                        >
+                                            Découvrir →
+                                        </Link>
+                                    </motion.div>
+                                </AnimatePresence>
+
+                                {/* Bloc texte animé mobile (desc + bouton à gauche) */}
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={activeEsthetique?.desc + "-mobile"}
+                                        initial={{ opacity: 0, y: 8 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -8 }}
+                                        transition={{ duration: 0.35, ease: "easeOut" }}
+                                        className="flex flex-row items-center justify-between gap-4 md:hidden"
+                                    >
+                                        {/* Description à gauche */}
+                                        <div className="flex-1 z-99">
+                                            <p className="text-white/80 text-[14px] leading-[2] pt-4
+                                                          [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)]">
+                                                {activeEsthetique?.desc}
+                                            </p>
+                                            <div className="hidden xl:block">
+                                                <Link
+                                                    to={activeEsthetique?.to || "#"}
+                                                    className="mt-4 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2 text-[13px] font-medium text-black hover:bg-white transition"
+                                                >
+                                                    Découvrir →
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        {/* (Image produit reste déjà affichée via motion.img au-dessus) */}
+                                    </motion.div>
+                                </AnimatePresence>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Carte visuelle Analyse */}
-                    <div className="relative overflow-hidden rounded-[1.5rem] mt-16 xl:mt-32">
-                        <img src="/home/hero-2.png" alt="" className="w-full h-auto object-cover" />
+                    {/* Carte visuelle Esthétique */}
+                    <div>
+                        {/* --- Titre animé uniquement mobile --- */}
                         <AnimatePresence mode="wait">
-                            <motion.img
-                                key={activeAnalyse?.image}
-                                src={activeAnalyse?.image}
-                                alt={activeAnalyse?.title}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 1.05 }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
-                                className="absolute top-1/2 left-1/2 translate-y-[-30%] translate-x-[20%] max-h-[60%] max-w-[50%] w-auto object-contain pointer-events-none z-20"
-                            />
+                            <motion.div
+                                key={activeAnalyse?.title + "-mobile"}
+                                initial={{ opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -8 }}
+                                transition={{ duration: 0.35, ease: "easeOut" }}
+                                className="block md:hidden mb-4"
+                            >
+                                <h4 className="font-medium text-2xl leading-[1.2] text-[#0A0F1C] text-center">
+                                    {activeAnalyse?.title}
+                                </h4>
+                            </motion.div>
                         </AnimatePresence>
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A0F1C]/60 via-[#0A0F1C]/35 to-transparent" />
-                        <div className="absolute inset-0 px-10 xl:px-14 xl:pt-14 pb-14">
-                            <ul className="space-y-4 hidden xl:block">
-                                {analyseItems.map((it, i) => {
-                                    const isActive = i === indexAnalyse;
-                                    return (
-                                        <li key={it.n}>
-                                            <button
-                                                type="button"
-                                                onClick={() => setIndexAnalyse(i)}
-                                                className={[
-                                                    "w-full text-left transition flex items-center gap-5",
-                                                    isActive ? "opacity-100" : "opacity-60 hover:opacity-80",
-                                                ].join(" ")}
-                                            >
-                                                <span className="text-[#C7D3DA]/80">{it.n}</span>
-                                                <span className="font-[Montserrat] text-[20px] text-white">{it.title}</span>
-                                            </button>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
+
+                        <div className="relative overflow-hidden rounded-[1.5rem]">
+                            <img src="/home/hero-2.png" alt="" className="w-full h-auto object-cover" />
+
+                            {/* Produit animé */}
                             <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={activeAnalyse?.title}
-                                    initial={{ opacity: 0, y: 8 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -8 }}
-                                    transition={{ duration: 0.35, ease: "easeOut" }}
-                                    className="mt-20"
-                                >
-                                    <h4 className="text-white font-[Montserrat] font-medium text-[3rem] leading-[1.2]">
-                                        {activeAnalyse?.title}
-                                    </h4>
-                                    <p className="mt-5 max-w-[18rem] text-white/80 text-[14px] leading-[2]">
-                                        {activeAnalyse?.desc}
-                                    </p>
-                                    <Link
-                                        to={activeAnalyse?.to || "#"}
-                                        className="mt-7 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2.5 text-[13px] font-medium text-black hover:bg-white transition"
-                                    >
-                                        Découvrir →
-                                    </Link>
-                                </motion.div>
+                                <motion.img
+                                    key={activeAnalyse?.image}
+                                    src={activeAnalyse?.image}
+                                    alt={activeAnalyse?.title}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 1.05 }}
+                                    transition={{ duration: 0.4, ease: "easeOut" }}
+                                    className="absolute top-1/2 left-1/2 translate-y-[-30%] translate-x-[20%] max-h-[60%] max-w-[50%] w-auto object-contain pointer-events-none z-20"
+                                />
                             </AnimatePresence>
+
+                            {/* Contenu interne */}
+                            <div className="absolute inset-0 px-6 md:px-10 xl:px-14 xl:pt-14 pb-14">
+                                {/* Liste (desktop uniquement) */}
+                                <ul className="space-y-4 hidden xl:block">
+                                    {analyseItems.map((it, i) => {
+                                        const isActive = i === indexAnalyse;
+                                        return (
+                                            <li key={it.n}>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setIndexAnalyse(i)}
+                                                    className={[
+                                                        "w-full text-left transition flex items-center gap-5",
+                                                        isActive ? "opacity-100" : "opacity-60 hover:opacity-80",
+                                                    ].join(" ")}
+                                                >
+                                                    <span className="text-[#C7D3DA]/80">{it.n}</span>
+                                                    <span className="text-[20px] text-white">{it.title}</span>
+                                                </button>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+
+                                {/* Bloc texte animé desktop */}
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={activeAnalyse?.title}
+                                        initial={{ opacity: 0, y: 8 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -8 }}
+                                        transition={{ duration: 0.35, ease: "easeOut" }}
+                                        className="mt-20 hidden md:block"
+                                    >
+                                        <h4 className="text-white font-medium text-[3rem] leading-[1.2]">
+                                            {activeAnalyse?.title}
+                                        </h4>
+                                        <p className="mt-5 max-w-[18rem] text-white/80 text-[14px] leading-[2]">
+                                            {activeAnalyse?.desc}
+                                        </p>
+                                        <Link
+                                            to={activeAnalyse?.to || "#"}
+                                            className="mt-7 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2.5 text-[13px] font-medium text-black hover:bg-white transition hidden xl:inline-flex"
+                                        >
+                                            Découvrir →
+                                        </Link>
+                                    </motion.div>
+                                </AnimatePresence>
+
+                                {/* Bloc texte animé mobile (desc + bouton à gauche) */}
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={activeAnalyse?.desc + "-mobile"}
+                                        initial={{ opacity: 0, y: 8 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -8 }}
+                                        transition={{ duration: 0.35, ease: "easeOut" }}
+                                        className="flex flex-row items-center justify-between gap-4 md:hidden"
+                                    >
+                                        {/* Description à gauche */}
+                                        <div className="flex-1 z-99">
+                                            <p className="text-white/80 text-[14px] leading-[2] pt-4
+                                                          [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)]">
+                                                {activeAnalyse?.desc}
+                                            </p>
+                                            <div className="hidden xl:block">
+                                                <Link
+                                                    to={activeAnalyse?.to || "#"}
+                                                    className="mt-4 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2 text-[13px] font-medium text-black hover:bg-white transition"
+                                                >
+                                                    Découvrir →
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        {/* (Image produit reste déjà affichée via motion.img au-dessus) */}
+                                    </motion.div>
+                                </AnimatePresence>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -641,4 +748,7 @@ function Home() {
     );
 }
 
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 export default Home;
