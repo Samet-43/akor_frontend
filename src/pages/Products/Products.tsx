@@ -17,11 +17,11 @@ function Products() {
             list2: [
                 "Centres esthétiques",
                 "Marques",
+                "Hôtels & Spa",
                 "Magasins spécialisés",
+                "Pharmacies / Parapharmacies",
                 "Salons de coiffure",
                 "Événementiel",
-                "Hôtels & Spa",
-                "Pharmacies / Parapharmacies",
                 "Autres",
             ],
         }),
@@ -98,46 +98,38 @@ function Products() {
             {/*LISTE DES PRODUITS*/}
             <section className="w-full mb-32">
                 {/* 40px entre chaque produit */}
-                <div className="px-6 lg:px-12 xl:px-20 space-y-10">
+                <div className="px-6 lg:px-12 xl:px-20 space-y-20">
                     {productsData.map((p) => (
-                        <article
+                        <Link
                             key={p.id}
-                            // align-items haut, pas centré verticalement
-                            className="grid xl:grid-cols-2 gap-8 xl:gap-16 items-start pt-8 xl:pt-12"
+                            to={`/products/${p.id}`}
+                            className="grid xl:grid-cols-2 gap-8 xl:gap-16 items-start pt-8 xl:pt-12 group"
                         >
-                            {/* Colonne gauche : type + titre + flèche */}
+                            {/* Colonne gauche */}
                             <div className="order-2 xl:order-1">
-                                {/* Types en badges */}
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {p.types.map((t) => (
                                         <span
                                             key={t}
                                             className="px-3 py-1 border border-[#0A0F1C]/50 rounded-full text-sm text-[#0A0F1C]/70"
                                         >
-                                            {t}
+                                          {t}
                                         </span>
                                     ))}
                                 </div>
 
-                                <h3 className="text-[#0A0F1C] text-4xl lg:text-5xl xl:text-[56px] leading-tight mb-6 max-w-[50%]">
+                                <h3 className="text-[#0A0F1C] text-4xl lg:text-5xl xl:text-[56px] leading-tight mb-6 max-w-[50%] group-hover:underline">
                                     {p.title}
                                 </h3>
 
-                                {/* Description */}
                                 <p className="text-[#0A0F1C]/70 mb-8 max-w-xl leading-relaxed">
                                     {p.description}
                                 </p>
 
-                                <Link
-                                    to={`/products/${p.id}`}
-                                    className="inline-flex rounded-full"
-                                    aria-label={`Voir ${p.title}`}
-                                >
-                                    <img src="/home/link.svg" alt="" className="h-10 w-10" />
-                                </Link>
+                                <img src="/home/link.svg" alt="" className="h-10 w-10" />
                             </div>
 
-                            {/* Colonne droite : image avec fond arrondi, poussée vers la droite */}
+                            {/* Colonne droite */}
                             <figure className="order-1 xl:order-2 ml-auto">
                                 <div className="rounded-[2rem] bg-[#efefef]">
                                     <div className="w-full aspect-[4/3] flex items-center justify-center">
@@ -150,7 +142,8 @@ function Products() {
                                     </div>
                                 </div>
                             </figure>
-                        </article>
+                        </Link>
+
                     ))}
                 </div>
             </section>
