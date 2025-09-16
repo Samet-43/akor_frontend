@@ -101,20 +101,21 @@ function Home() {
 
                     <Link
                         to="/products"
-                        className="inline-flex items-center justify-center
-                                  mt-5 sm:mt-6 md:mt-12
-                                  rounded-full bg-white px-4 sm:px-5 md:px-6 py-2.5 md:py-3
-                                  text-xs sm:text-sm font-medium text-black
-                                  hover:bg-gray-100 transition"
+                        className="absolute top-0 right-[-1rem] md:static
+                                   inline-flex items-center justify-center
+                                   mt-0 md:mt-12
+                                   rounded-full bg-white px-4 sm:px-5 md:px-6 py-2.5 md:py-3
+                                   text-xs sm:text-sm font-medium text-black
+                                   hover:bg-gray-100 transition"
                     >
-                        Nos technologies
+                        Nos techno
                         <span aria-hidden="true" className="ml-2">→</span>
                     </Link>
                 </div>
             </section>
 
             {/*MACHINA*/}
-            <section className="w-full flex justify-center mt-32 xl:mt-32 xl:mt-64">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[90vw] mx-auto grid grid-cols-4 grid-rows-2 gap-6 xl:h-[40rem] h-[34rem]">
 
                     {/* div1 : image 1 */}
@@ -185,7 +186,7 @@ function Home() {
             </section>
 
             {/*MADE IN KOREA*/}
-            <section className="w-full flex justify-center mt-32 xl:mt-32 xl:mt-64">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
                 {/* Cartes */}
                 <div className="grid gap-6 md:grid-cols-2 md:gap-8 w-[95vw]">
                     {/* Carte 1 */}
