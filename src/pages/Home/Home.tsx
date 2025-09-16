@@ -108,7 +108,10 @@ function Home() {
                                    text-xs sm:text-sm font-medium text-black
                                    hover:bg-gray-100 transition"
                     >
-                        Nos techno
+                        <span className="block md:hidden">Nos technos</span>
+
+                        <span className="hidden md:block">Nos technologies</span>
+
                         <span aria-hidden="true" className="ml-2">→</span>
                     </Link>
                 </div>
