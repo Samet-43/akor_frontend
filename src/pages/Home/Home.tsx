@@ -49,7 +49,7 @@ function Home() {
             if (!hoverRef.current && esthetiqueItems.length > 0) {
                 setIndexEsthetique((i) => (i + 1) % esthetiqueItems.length);
             }
-        }, 3000);
+        }, 6000);
         return () => clearInterval(id);
     }, [esthetiqueItems.length]);
 
@@ -59,7 +59,7 @@ function Home() {
             if (!hoverRef.current && analyseItems.length > 0) {
                 setIndexAnalyse((i) => (i + 1) % analyseItems.length);
             }
-        }, 3000);
+        }, 6000);
         return () => clearInterval(id);
     }, [analyseItems.length]);
 
@@ -218,7 +218,7 @@ function Home() {
                     <header className="mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                         <div className="max-w-[40rem]">
                             <p className="text-lg xl:text-2xl leading-9 text-[#0A0F1C]">
-                                Découvrez des dispositifs esthétiques et médicaux <br />
+                                Découvrez des dispositifs esthétiques et médicaux {" "}
                                 <span className="text-[#0A0F1C]/50">
                                     de pointe, alliant innovation, fiabilité et expertise professionnelle
                                 </span>
@@ -652,7 +652,7 @@ function Home() {
                     {/* Titre */}
                     <div className="text-center max-w-[45rem] mx-auto">
                         <p className="text-[#0A0F1C] text-3xl leading-10">
-                            Découvrez l’excellence de nos équipements,
+                            Découvrez l’excellence de nos équipements,{" "}
                             <span className="text-[#0A0F1C]/60">des technologies esthétiques conçues pour durer et performer.</span>
                         </p>
                     </div>

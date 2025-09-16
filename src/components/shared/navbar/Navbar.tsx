@@ -53,7 +53,7 @@ function Navbar() {
                                 </NavLink>
 
                                 {/* Dropdown → liste produits */}
-                                <div className="hidden xl:block absolute left-1/2 -translate-x-1/2 top-full mt-3 w-56 rounded-xl bg-white shadow-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-56 rounded-xl bg-white shadow-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
                                     {productsData.map((p) => (
                                         <NavLink
                                             key={p.id}
@@ -89,7 +89,7 @@ function Navbar() {
                         </Link>
                     </div>
 
-                    {/* Burger mobile (inchangé) */}
+                    {/* Burger mobile */}
                     <button
                         className="ml-auto md:hidden inline-flex items-center justify-center size-10 rounded-full"
                         aria-label="Ouvrir le menu"
@@ -101,7 +101,7 @@ function Navbar() {
                     </button>
                 </nav>
 
-                {/* Panneau mobile plein écran (inchangé pour l’instant) */}
+                {/* Panneau mobile plein écran */}
                 {open && (
                     <div className="fixed inset-0 z-50 bg-white">
                         <div className="h-20 px-6 flex items-center justify-between">
@@ -119,10 +119,18 @@ function Navbar() {
 
                         <div className="px-6 py-8 space-y-4 text-lg">
                             <Link to="/" onClick={() => setOpen(false)} className="block py-3">Accueil</Link>
+
+                            {/* Produits avec lien + dropdown */}
                             <details className="py-3">
                                 <summary className="cursor-pointer list-none flex items-center justify-between">
-                                    Nos technologies
-                                    <svg className="size-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <Link
+                                        to="/products"
+                                        onClick={() => setOpen(false)}
+                                        className="flex-1"
+                                    >
+                                        Nos technologies
+                                    </Link>
+                                    <svg className="size-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
                                     </svg>
                                 </summary>
@@ -139,6 +147,7 @@ function Navbar() {
                                     ))}
                                 </div>
                             </details>
+
                             <Link to="/about-us" onClick={() => setOpen(false)} className="block py-3">À propos</Link>
                             <Link
                                 to="/contact"
