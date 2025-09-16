@@ -215,23 +215,25 @@ function Home() {
             <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[90%] mx-auto">
                     {/* En-tête */}
-                    <header className="mb-10 flex items-start justify-between gap-6">
+                    <header className="mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                         <div className="max-w-[40rem]">
                             <p className="text-lg xl:text-2xl leading-9 text-[#0A0F1C]">
-                                Découvrez des dispositifs esthétiques et médicaux <br/>
+                                Découvrez des dispositifs esthétiques et médicaux <br />
                                 <span className="text-[#0A0F1C]/50">
                                     de pointe, alliant innovation, fiabilité et expertise professionnelle
                                 </span>
                             </p>
                         </div>
+
                         <Link
                             to="/products"
-                            className="self-center mt-1 inline-flex items-center gap-2 text-[#0A0F1C] text-md xl:text-lg hover:opacity-80"
+                            className="self-end md:self-center mt-4 md:mt-1 inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
                         >
                             VOIR PLUS
-                            <img src="/home/link.svg" alt="" className="hidden md:block"/>
+                            <img src="/home/link.svg" alt="" className="hidden md:block" />
                         </Link>
                     </header>
+
 
                     {/* Carte visuelle Esthétique */}
                     <div className="relative overflow-hidden rounded-[1.5rem]">
@@ -297,7 +299,7 @@ function Home() {
                     </div>
 
                     {/* Carte visuelle Analyse */}
-                    <div className="relative overflow-hidden rounded-[1.5rem] mt-32">
+                    <div className="relative overflow-hidden rounded-[1.5rem] mt-16 xl:mt-32">
                         <img src="/home/hero-2.png" alt="" className="w-full h-auto object-cover" />
                         <AnimatePresence mode="wait">
                             <motion.img
@@ -371,7 +373,7 @@ function Home() {
                             <span className="font-normal">
                               AKOR Aesthetics redéfinit la technologie esthétique et élève les standards du soin.
                             </span>
-                                                <span className="font-normal text-[#0A0F1C]/50">
+                            <span className="font-normal text-[#0A0F1C]/50">
                               {" "}Nous concevons des solutions intelligentes qui allient innovation et performance terrain.
                             </span>
                         </h3>
