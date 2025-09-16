@@ -1,7 +1,7 @@
-import {useMemo} from "react";
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
+import { useMemo } from "react";
 
 function Deposition() {
-
     const testimonials = useMemo(
         () => ({
             col1: [
@@ -77,58 +77,72 @@ function Deposition() {
         []
     );
 
-
     return (
-        <>
-            <section className="w-full flex justify-center mt-64">
-                <div className="w-[90vw] mx-auto flex flex-col items-center">
-                    {/* Texte au-dessus */}
-                    <div className="text-center max-w-[48rem] mb-16">
-                        <h3 className="text-xl md:text-2xl xl:text-3xl font-semibold text-[#0A0F1C] flex items-center justify-center gap-2">
-                            Témoignages de professionnels
-                            <img src="/deposition/image-text-1.png" alt="icon" />
-                        </h3>
-                        <p className="mt-2 text-xl md:text-2xl xl:text-3xl font-semibold text-[#0A0F1C]/50">
-                            qui ont fait le choix de l’excellence et de la performance
-                        </p>
-                    </div>
+        <section className="w-full flex justify-center mt-64">
+            <div className="w-[90vw] mx-auto flex flex-col items-center">
+                {/* Texte au-dessus */}
+                <div className="text-center max-w-[48rem] mb-16">
+                    <h3 className="text-xl md:text-2xl xl:text-3xl font-semibold text-[#0A0F1C] flex items-center justify-center gap-2">
+                        Témoignages de professionnels
+                        <img src="/deposition/image-text-1.png" alt="icon" />
+                    </h3>
+                    <p className="mt-2 text-xl md:text-2xl xl:text-3xl font-semibold text-[#0A0F1C]/50">
+                        qui ont fait le choix de l’excellence et de la performance
+                    </p>
+                </div>
 
-                    {/* Grille en-dessous */}
-                    <div className="w-full grid grid-cols-1 xl:grid-cols-3 gap-12 mt-8">
-                        {Object.values(testimonials).map((col, colIdx) => (
-                            <div
-                                key={colIdx}
-                                className={`space-y-8 ${colIdx !== 1 ? "xl:mt-12" : ""}`}
-                            >
-                                {col.map((item) => (
-                                    <article
-                                        key={item.id}
-                                        className="bg-[#ffffff]/80 rounded-2xl p-8"
-                                    >
-                                        {/* Logo */}
-                                        <img src={item.logo} alt="" />
+                {/* Version desktop (grille) */}
+                <div className="hidden xl:grid w-full grid-cols-3 gap-12 mt-8">
+                    {Object.values(testimonials).map((col, colIdx) => (
+                        <div
+                            key={colIdx}
+                            className={`space-y-8 ${colIdx !== 1 ? "xl:mt-12" : ""}`}
+                        >
+                            {col.map((item) => (
+                                <article
+                                    key={item.id}
+                                    className="bg-[#ffffff]/80 rounded-2xl p-8"
+                                >
+                                    <img src={item.logo} alt="" />
+                                    <p className="text-base md:text-lg text-[#535862] leading-relaxed mt-6 mb-10">
+                                        “{item.quote}”
+                                    </p>
+                                    <div className="flex items-center">
+                                        <img src={item.profile} alt="" />
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    ))}
+                </div>
 
-                                        {/* Citation */}
-                                        <p className="text-base md:text-lg text-[#535862] leading-relaxed mt-6 mb-10">
+                {/* Version mobile (Disclosure) */}
+                <div className="block xl:hidden w-full mt-8 space-y-4">
+                    {Object.values(testimonials).flat().map((item) => (
+                        <Disclosure key={item.id}>
+                            {({ open }) => (
+                                <div className="border border-gray-400 rounded-xl">
+                                    <DisclosureButton className="flex justify-between items-center w-full px-4 py-3 font-semibold text-[#0A0F1C]">
+                                        <span>
+                                          <img src={item.logo} alt="" className="h-6 inline-block mr-2" />
+                                          Témoignage #{item.id}
+                                        </span>
+                                        <span>{open ? "-" : "+"}</span>
+                                    </DisclosureButton>
+                                    <DisclosurePanel className="px-4 py-3">
+                                        <p className="text-sm text-[#535862] leading-relaxed mb-6">
                                             “{item.quote}”
                                         </p>
-
-                                        {/* Profil */}
-                                        <div className="flex items-center">
-                                            <img
-                                                src={item.profile}
-                                                alt=""
-                                            />
-                                        </div>
-                                    </article>
-                                ))}
-                            </div>
-                        ))}
-                    </div>
+                                        <img src={item.profile} alt="" />
+                                    </DisclosurePanel>
+                                </div>
+                            )}
+                        </Disclosure>
+                    ))}
                 </div>
-            </section>
-        </>
-    )
+            </div>
+        </section>
+    );
 }
 
-export default Deposition
+export default Deposition;
