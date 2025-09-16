@@ -120,17 +120,20 @@ function Navbar() {
                         <div className="px-6 py-8 space-y-4 text-lg">
                             <Link to="/" onClick={() => setOpen(false)} className="block py-3">Accueil</Link>
 
-                            {/* Produits avec lien + dropdown */}
+                            {/* Lien simple vers page Produits */}
+                            <Link
+                                to="/products"
+                                onClick={() => setOpen(false)}
+                                className="block py-3"
+                            >
+                                Nos technologies
+                            </Link>
+
+                            {/* Dropdown des technologies */}
                             <details className="py-3">
                                 <summary className="cursor-pointer list-none flex items-center justify-between">
-                                    <Link
-                                        to="/products"
-                                        onClick={() => setOpen(false)}
-                                        className="flex-1"
-                                    >
-                                        Nos technologies
-                                    </Link>
-                                    <svg className="size-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                    listes des technologies
+                                    <svg className="size-4" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
                                     </svg>
                                 </summary>

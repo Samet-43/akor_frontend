@@ -330,7 +330,7 @@ function Home() {
                                         className="flex flex-row items-center justify-between gap-4 md:hidden"
                                     >
                                         {/* Description à gauche */}
-                                        <div className="flex-1 z-99">
+                                        <div className="flex-1 z-20">
                                             <p className="text-white/80 text-[14px] leading-[2] pt-4
                                                           [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)]">
                                                 {activeEsthetique?.desc}
@@ -446,7 +446,7 @@ function Home() {
                                         className="flex flex-row items-center justify-between gap-4 md:hidden"
                                     >
                                         {/* Description à gauche */}
-                                        <div className="flex-1 z-99">
+                                        <div className="flex-1 z-20">
                                             <p className="text-white/80 text-[14px] leading-[2] pt-4
                                                           [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)]">
                                                 {activeAnalyse?.desc}
