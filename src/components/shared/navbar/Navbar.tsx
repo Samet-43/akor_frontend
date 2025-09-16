@@ -1,13 +1,27 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 import { productsData } from "../../../data/products";
 
 function Navbar() {
     const [open, setOpen] = useState(false);
 
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <>
-            <header className="sticky top-0 z-50 w-full bg-[#f6f6f6]">
+            <header
+                className={`sticky z-50 w-full transition-colors duration-300 ${
+                    scrolled ? "bg-[#f6f6f6]" : "bg-transparent"
+                }`}
+            >
                 <nav className="h-20 w-full px-6 md:px-10 flex items-center">
                     {/* FLEX 1 : logo */}
                     <Link to="/" className="flex items-center gap-3 shrink-0">

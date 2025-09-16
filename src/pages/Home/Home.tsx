@@ -72,7 +72,7 @@ function Home() {
             {/*HERO*/}
             <section className="relative w-full flex justify-center">
                 {/* Image hero */}
-                <img src="/home/hero-1.png" alt="Machine esthétique" className="w-[95%] h-auto"/>
+                <img src="/home/hero-1.png" alt="Machine esthétique" className="w-[97.5%] h-auto"/>
 
                 {/* Texte superposé */}
                 <div className="absolute left-[5%] top-6 md:top-1/2 translate-y-0 md:-translate-y-1/2 max-w-[19rem] sm:max-w-[22rem] md:max-w-md">
