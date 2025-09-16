@@ -72,31 +72,16 @@ function Home() {
             {/*HERO*/}
             <section className="relative w-full flex justify-center">
                 {/* Image hero */}
-                <img
-                    src="/home/hero-1.png"
-                    alt="Machine esthétique"
-                    className="w-[95%] h-auto"
-                />
-
-                {/* Assombrissement léger pour mobile uniquement (lisibilité) */}
-                <div className="absolute inset-0 md:hidden bg-gradient-to-r from-black/30 to-transparent pointer-events-none rounded-[1rem]"></div>
+                <img src="/home/hero-1.png" alt="Machine esthétique" className="w-[95%] h-auto"/>
 
                 {/* Texte superposé */}
                 <div
-                    className="
-                                absolute left-[5%]
-                                top-6 md:top-1/2
-                                translate-y-0 md:-translate-y-1/2
-                                max-w-[19rem] sm:max-w-[22rem] md:max-w-md
-                              "
+                    className="absolute left-[5%] top-6 md:top-1/2 translate-y-0 md:-translate-y-1/2 max-w-[19rem] sm:max-w-[22rem] md:max-w-md"
                 >
                     <h1
-                        className="
-                                  font-[Montserrat] font-medium
-                                  text-2xl sm:text-3xl md:text-5xl lg:text-[64px]
-                                  leading-snug md:leading-tight lg:leading-[79px]
-                                  tracking-[-0.02em] text-[#FCF8F1]
-                                "
+                        className="font-medium text-2xl sm:text-3xl md:text-5xl xl:text-6xl
+                                  leading-snug md:leading-tight xl:leading-[79px]
+                                  tracking-[-0.02em] text-[#FCF8F1]"
                     >
                         L’esthétique
                         <br /> de la nouvelle
@@ -104,27 +89,23 @@ function Home() {
                     </h1>
 
                     <p
-                        className="
-                                  mt-3 sm:mt-4 md:mt-6
+                        className="mt-3 sm:mt-4 md:mt-6
                                   font-[Quicksand] font-medium
                                   text-xs sm:text-sm md:text-base
                                   leading-[1.4] tracking-[-0.01em] text-[#F6F6F6]
-                                  pr-6
-                                "
+                                  pr-6"
                     >
                         Des machines conçues pour les professionnels exigeants, alliant
                         efficacité, rentabilité et design.
                     </p>
 
                     <Link
-                        to="/product"
-                        className="
-                                  inline-flex items-center justify-center
+                        to="/products"
+                        className="inline-flex items-center justify-center
                                   mt-5 sm:mt-6 md:mt-12
                                   rounded-full bg-white px-4 sm:px-5 md:px-6 py-2.5 md:py-3
                                   text-xs sm:text-sm font-medium text-black
-                                  hover:bg-gray-100 transition
-                                "
+                                  hover:bg-gray-100 transition"
                     >
                         Nos technologies
                         <span aria-hidden="true" className="ml-2">→</span>
