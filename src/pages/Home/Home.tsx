@@ -133,31 +133,31 @@ function Home() {
             </section>
 
             {/*MACHINA*/}
-            <section className="w-full flex justify-center mt-64">
-
+            <section className="w-full flex justify-center mt-32 xl:mt-32 xl:mt-64">
                 <div className="w-[90vw] mx-auto grid grid-cols-4 grid-rows-2 gap-6 xl:h-[40rem] h-[34rem]">
+
                     {/* div1 : image 1 */}
-                    <div className="rounded-[3rem] overflow-hidden">
+                    <div className="rounded-[3rem] overflow-hidden hidden md:block">
                         <img src="/home/machina/image-1.png" alt="Image 1" className="w-full h-full object-cover" />
                     </div>
 
                     {/* div2 : image 2 */}
-                    <div className="rounded-[3rem] overflow-hidden col-start-1 row-start-2">
+                    <div className="rounded-[3rem] overflow-hidden col-start-1 row-start-2 hidden md:block">
                         <img src="/home/machina/image-2.png" alt="Image 2" className="w-full h-full object-cover" />
                     </div>
 
-                    {/* div3 : grande image (hauteur max de la grille) */}
-                    <div className="row-span-2 col-start-2 row-start-1 rounded-[3rem] overflow-hidden">
+                    {/* div3 : grande image */}
+                    <div className="row-span-2 col-start-2 row-start-1 rounded-[3rem] overflow-hidden hidden md:block">
                         <img src="/home/machina/image-3.png" alt="Image 3" className="w-full h-full object-cover" />
                     </div>
 
-                    {/* div4 : texte (au milieu à droite) */}
-                    <div className="col-span-2 row-span-2 col-start-3 row-start-1 flex items-center justify-center h-full">
-                        <div className="max-w-xl space-y-6">
-                            <div className="font-semibold text-3xl xl:text-4xl leading-snug text-[#0A0F1C]">
+                    {/* div4 : texte */}
+                    <div className="col-span-4 md:col-span-2 row-span-2 col-start-1 md:col-start-3 row-start-1 flex items-center justify-center h-full">
+                        <div className="max-w-xl space-y-6 text-center md:text-left">
+                            <div className="font-semibold text-2xl md:text-3xl xl:text-4xl leading-snug text-[#0A0F1C]">
                                 Des machines conçues pour l’excellence
                             </div>
-                            <div className="text-base xl:text-lg leading-relaxed text-[#0A0F1C]/70 my-12">
+                            <div className="text-base md:text-lg leading-relaxed text-[#0A0F1C]/70 my-8 md:my-12">
                                 Découvrez une sélection de nos équipements haut de gamme, conçus pour allier performance,
                                 innovation et rentabilité. Chaque machine est pensée pour répondre aux besoins des professionnels
                                 exigeants du secteur esthétique et médical.
@@ -174,47 +174,29 @@ function Home() {
             </section>
 
             {/*BELGIUM*/}
-            <section className="w-full flex justify-center my-50">
+            <section className="w-full flex justify-center my-25 xl:my-50">
                 <div className="w-[97%] mx-auto">
                     {/* Bloc texte centré */}
                     <div className="text-center">
-                        <p className="text-3xl font-semibold mb-16">
+                        <p className="text-xl xl:text-3xl font-semibold mb-16">
                             100% Expertise Belge 🇧🇪, 100% Innovation
                         </p>
 
-                        <h2
-                            className="font-[Montserrat] font-normal
-                                       text-[26px] leading-[40.32px] tracking-[-0.03em]
-                                       text-[#0A0F1C]"
-                        >
+                        <h2 className="text-lg xl:text-xl text-[#0A0F1C]">
                             Innovation, expertise et service sur mesure
                         </h2>
 
-                        <p
-                            className="mt-2 font-[Montserrat] font-normal
-                                       text-[26px] leading-[40.32px] tracking-[-0.03em]
-                                       text-[#0A0F1C]/70"
-                        >
+                        <p className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
                             bien plus qu'un équipement{" "}
-                            <img
-                                src="/home/image-text-1.png"
-                                alt=""
-                                className="inline-block px-2"
-                            />
 
+                            <img src="/home/image-text-1.png" alt="" className="inline-block px-2"/>
                         </p>
 
-                        <p
-                            className="font-[Montserrat] font-normal
-                                       text-[26px] leading-[40.32px] tracking-[-0.03em]
-                                       text-[#0A0F1C]/70"
-                        >
+                        <p className="text-lg xl:text-xl text-[#0A0F1C]/70">
                             un partenariat pour{" "}
-                            <img
-                                src="/home/image-text-2.png"
-                                alt=""
-                                className="inline-block px-2"
-                            />
+
+                            <img src="/home/image-text-2.png" alt="" className="inline-block px-2"/>
+
                             vos projets esthétiques.
                         </p>
                     </div>
@@ -222,7 +204,7 @@ function Home() {
             </section>
 
             {/*MADE IN KOREA*/}
-            <section className="w-full flex justify-center mt-64">
+            <section className="w-full flex justify-center mt-32 xl:mt-32 xl:mt-64">
                 {/* Cartes */}
                 <div className="grid gap-6 md:grid-cols-2 md:gap-8 w-[95vw]">
                     {/* Carte 1 */}
@@ -246,12 +228,12 @@ function Home() {
             </section>
 
             {/*DEMO*/}
-            <section className="w-full flex justify-center mt-64">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[90%] mx-auto">
                     {/* En-tête */}
                     <header className="mb-10 flex items-start justify-between gap-6">
                         <div className="max-w-[40rem]">
-                            <p className="text-2xl leading-9 text-[#0A0F1C]">
+                            <p className="text-lg xl:text-2xl leading-9 text-[#0A0F1C]">
                                 Découvrez des dispositifs esthétiques et médicaux <br/>
                                 <span className="text-[#0A0F1C]/50">
                                     de pointe, alliant innovation, fiabilité et expertise professionnelle
@@ -260,7 +242,7 @@ function Home() {
                         </div>
                         <Link
                             to="/products"
-                            className="self-center mt-1 inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
+                            className="self-center mt-1 inline-flex items-center gap-2 text-[#0A0F1C] text-md xl:text-lg hover:opacity-80"
                         >
                             VOIR PLUS
                             <img src="/home/link.svg" alt="" className="hidden xl:block"/>
@@ -396,22 +378,23 @@ function Home() {
             </section>
 
             {/*CERTIFICATE*/}
-            <section className="w-full flex justify-center mt-64">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[90vw] mx-auto flex flex-col gap-10">
+
                     {/* Partie haute : titre + lien */}
-                    <div className="flex items-start justify-between ">
-                        <h3 className="text-xl xl:text-3xl leading-[1.35] text-[#0A0F1C] max-w-[60vw] xl:max-w-[35vw]">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                        <h3 className="text-xl xl:text-3xl leading-[1.35] text-[#0A0F1C] md:max-w-[60vw] xl:max-w-[35vw]">
                             <span className="font-normal">
                               AKOR Aesthetics redéfinit la technologie esthétique et élève les standards du soin.
                             </span>
-                            <span className="font-normal text-[#0A0F1C]/50">
+                                                <span className="font-normal text-[#0A0F1C]/50">
                               {" "}Nous concevons des solutions intelligentes qui allient innovation et performance terrain.
                             </span>
                         </h3>
 
                         <Link
-                            to="/product"
-                            className="self-end mb-1 inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
+                            to="/products"
+                            className="self-end md:self-auto inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
                         >
                             VOIR PLUS
                             <img src="/home/link.svg" alt="" />
@@ -419,11 +402,12 @@ function Home() {
                     </div>
 
                     {/* Partie basse : liste + image */}
-                    <div className="flex gap-10 mt-20">
+                    <div className="flex flex-col md:flex-row gap-10 mt-20">
+
                         {/* Colonne gauche */}
-                        <div className="flex-1 flex flex-col items-center justify-center gap-8">
+                        <div className="flex-1 flex flex-col gap-8">
                             {/* Item 1 */}
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 w-full">
                                 <img src="/home/certificate.png" alt="Certification" className="h-15 w-15"/>
                                 <div className="text-[#0A0F1C]">
                                     <div className="font-medium text-xl xl:text-2xl">Certification CA</div>
@@ -434,7 +418,7 @@ function Home() {
                             </div>
 
                             {/* Item 2 */}
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 w-full">
                                 <img src="/home/diamond.png" alt="Certification" className="h-15 w-15"/>
                                 <div className="text-[#0A0F1C]">
                                     <div className="font-medium text-xl xl:text-2xl">Fabrication Coréenne</div>
@@ -445,7 +429,7 @@ function Home() {
                             </div>
 
                             {/* Item 3 */}
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 w-full">
                                 <img src="/home/heart.png" alt="Certification" className="h-15 w-15"/>
                                 <div className="text-[#0A0F1C]">
                                     <div className="font-medium text-xl xl:text-2xl">Expertise médicale</div>
@@ -456,7 +440,7 @@ function Home() {
                             </div>
 
                             {/* Item 4 */}
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 w-full">
                                 <img src="/home/light.png" alt="Certification" className="h-15 w-15"/>
                                 <div className="text-[#0A0F1C]">
                                     <div className="font-medium text-xl xl:text-2xl">Innovation et fiabilité</div>
@@ -467,8 +451,8 @@ function Home() {
                             </div>
                         </div>
 
-                        {/* Colonne droite */}
-                        <div className="flex-1 rounded-[1.5rem] overflow-hidden">
+                        {/* Colonne droite (image) */}
+                        <div className="flex-1 rounded-[1.5rem] overflow-hidden hidden md:block">
                             <img
                                 src="/home/image-6.png"
                                 alt="Accueil AKOR Aesthetics"
@@ -479,9 +463,8 @@ function Home() {
                 </div>
             </section>
 
-
             {/*EXPERTISE*/}
-            <section className="w-full flex justify-center mt-64">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[95%] mx-auto">
                     {/* Titre unique (début en gras) */}
                     <p className="text-center text-[#0A0F1C] text-[22px] sm:text-[24px] leading-10 max-w-[48rem] mx-auto">
@@ -571,7 +554,7 @@ function Home() {
             </section>
 
             {/*EQUIPMENT*/}
-            <section className="w-full flex justify-center mt-64">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[100vw] mx-auto">
                     {/* Titre */}
                     <div className="text-center max-w-[45rem] mx-auto">
@@ -634,7 +617,7 @@ function Home() {
             </section>
 
             {/*BOOK A DEMO*/}
-            <section className="w-full flex justify-center mt-64 hidden xl:block">
+            <section className="w-full flex justify-center mt-32 xl:mt-64 hidden xl:block">
                 <div className="w-full mx-auto bg-[#0A0F1C]/30">
                     <div className="flex items-center justify-between py-12">
                         {/* gauche */}
