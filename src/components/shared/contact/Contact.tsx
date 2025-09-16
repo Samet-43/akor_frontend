@@ -1,7 +1,7 @@
 function Contact() {
     return (
         <>
-            <section className="w-full flex justify-center mt-64 mb-32">
+            <section className="w-full flex justify-center mt-32 xl:mt-64 mb-32">
                 <div className="w-[90vw] mx-auto">
                     <div className="mx-auto max-w-[56rem] rounded-[1.5rem] bg-[#FEFEFE] p-6 sm:p-8 lg:p-12 shadow-[0_12px_40px_rgba(8,15,28,0.06)] ring-1 ring-black/5">
                         {/* Titre */}
