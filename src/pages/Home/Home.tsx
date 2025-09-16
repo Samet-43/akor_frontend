@@ -92,7 +92,7 @@ function Home() {
                                   font-[Quicksand] font-medium
                                   text-xs sm:text-sm md:text-base
                                   leading-[1.4] tracking-[-0.01em] text-[#F6F6F6]
-                                  [text-shadow:_2px_2px_0px_rgba(73,73,73,0.4)]"
+                                  [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)]"
                     >
                         Des machines conçues pour les professionnels exigeants, alliant
                         efficacité, rentabilité et design.
