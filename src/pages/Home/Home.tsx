@@ -259,7 +259,7 @@ function Home() {
                             </p>
                         </div>
                         <Link
-                            to="/product"
+                            to="/products"
                             className="self-center mt-1 inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
                         >
                             VOIR PLUS
