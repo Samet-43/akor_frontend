@@ -304,15 +304,15 @@ function Home() {
                                         transition={{ duration: 0.35, ease: "easeOut" }}
                                         className="mt-20 hidden md:block"
                                     >
-                                        <h4 className="text-white font-medium text-[3rem] leading-[1.2]">
+                                        <h4 className="text-white font-medium text-[3.5rem] leading-[1.2]">
                                             {activeEsthetique?.title}
                                         </h4>
-                                        <p className="mt-5 max-w-[18rem] text-white/80 text-[14px] leading-[2]">
+                                        <p className="mt-5 max-w-[30rem] text-white/80 text-xl leading-[2]">
                                             {activeEsthetique?.desc}
                                         </p>
                                         <Link
                                             to={activeEsthetique?.to || "#"}
-                                            className="mt-7 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2.5 text-[13px] font-medium text-black hover:bg-white transition hidden xl:inline-flex"
+                                            className="mt-7 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2.5 text-xl font-medium text-black hover:bg-white transition hidden xl:inline-flex"
                                         >
                                             Découvrir →
                                         </Link>
@@ -420,15 +420,15 @@ function Home() {
                                         transition={{ duration: 0.35, ease: "easeOut" }}
                                         className="mt-20 hidden md:block"
                                     >
-                                        <h4 className="text-white font-medium text-[3rem] leading-[1.2]">
+                                        <h4 className="text-white font-medium text-[3.5rem] leading-[1.2]">
                                             {activeAnalyse?.title}
                                         </h4>
-                                        <p className="mt-5 max-w-[18rem] text-white/80 text-[14px] leading-[2]">
+                                        <p className="mt-5 max-w-[30rem] text-white/80 text-xl leading-[2]">
                                             {activeAnalyse?.desc}
                                         </p>
                                         <Link
                                             to={activeAnalyse?.to || "#"}
-                                            className="mt-7 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2.5 text-[13px] font-medium text-black hover:bg-white transition hidden xl:inline-flex"
+                                            className="mt-7 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2.5 text-xl font-medium text-black hover:bg-white transition hidden xl:inline-flex"
                                         >
                                             Découvrir →
                                         </Link>
