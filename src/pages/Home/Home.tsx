@@ -182,7 +182,7 @@ function Home() {
                             100% Expertise Belge 🇧🇪, 100% Innovation
                         </p>
 
-                        <h2 className="text-lg xl:text-xl text-[#0A0F1C]">
+                        <h2 className="text-lg xl:text-xl text-[#0A0F1C] font-medium">
                             Innovation, expertise et service sur mesure
                         </h2>
 
