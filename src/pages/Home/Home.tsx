@@ -634,7 +634,7 @@ function Home() {
             </section>
 
             {/*BOOK A DEMO*/}
-            <section className="w-full flex justify-center mt-64">
+            <section className="w-full flex justify-center mt-64 hidden xl:block">
                 <div className="w-full mx-auto bg-[#0A0F1C]/30">
                     <div className="flex items-center justify-between py-12">
                         {/* gauche */}
