@@ -53,7 +53,7 @@ function Navbar() {
                                 </NavLink>
 
                                 {/* Dropdown → liste produits */}
-                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-56 rounded-xl bg-white shadow-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+                                <div className="hidden xl:block absolute left-1/2 -translate-x-1/2 top-full mt-3 w-56 rounded-xl bg-white shadow-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
                                     {productsData.map((p) => (
                                         <NavLink
                                             key={p.id}
