@@ -335,14 +335,6 @@ function Home() {
                                                           [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)]">
                                                 {activeEsthetique?.desc}
                                             </p>
-                                            <div className="hidden xl:block">
-                                                <Link
-                                                    to={activeEsthetique?.to || "#"}
-                                                    className="mt-4 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2 text-[13px] font-medium text-black hover:bg-white transition"
-                                                >
-                                                    Découvrir →
-                                                </Link>
-                                            </div>
                                         </div>
                                         {/* (Image produit reste déjà affichée via motion.img au-dessus) */}
                                     </motion.div>
@@ -451,14 +443,6 @@ function Home() {
                                                           [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)]">
                                                 {activeAnalyse?.desc}
                                             </p>
-                                            <div className="hidden xl:block">
-                                                <Link
-                                                    to={activeAnalyse?.to || "#"}
-                                                    className="mt-4 inline-flex items-center justify-center rounded-full bg-white/90 px-5 py-2 text-[13px] font-medium text-black hover:bg-white transition"
-                                                >
-                                                    Découvrir →
-                                                </Link>
-                                            </div>
                                         </div>
                                         {/* (Image produit reste déjà affichée via motion.img au-dessus) */}
                                     </motion.div>
