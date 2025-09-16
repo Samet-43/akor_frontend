@@ -75,13 +75,12 @@ function Home() {
                 <img src="/home/hero-1.png" alt="Machine esthétique" className="w-[95%] h-auto"/>
 
                 {/* Texte superposé */}
-                <div
-                    className="absolute left-[5%] top-6 md:top-1/2 translate-y-0 md:-translate-y-1/2 max-w-[19rem] sm:max-w-[22rem] md:max-w-md"
-                >
+                <div className="absolute left-[5%] top-6 md:top-1/2 translate-y-0 md:-translate-y-1/2 max-w-[19rem] sm:max-w-[22rem] md:max-w-md">
                     <h1
                         className="font-medium text-2xl sm:text-3xl md:text-5xl xl:text-6xl
                                   leading-snug md:leading-tight xl:leading-[79px]
-                                  tracking-[-0.02em] text-[#FCF8F1]"
+                                  tracking-[-0.02em] text-[#FCF8F1]
+                                  [text-shadow:_2px_2px_0px_rgba(73,73,73,0.4)]"
                     >
                         L’esthétique
                         <br /> de la nouvelle
@@ -93,7 +92,7 @@ function Home() {
                                   font-[Quicksand] font-medium
                                   text-xs sm:text-sm md:text-base
                                   leading-[1.4] tracking-[-0.01em] text-[#F6F6F6]
-                                  pr-6"
+                                  [text-shadow:_2px_2px_0px_rgba(73,73,73,0.4)]"
                     >
                         Des machines conçues pour les professionnels exigeants, alliant
                         efficacité, rentabilité et design.
