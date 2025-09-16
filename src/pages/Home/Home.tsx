@@ -117,7 +117,7 @@ function Home() {
             </section>
 
             {/*MACHINA*/}
-            <section className="w-full flex justify-center mt-32 xl:mt-64">
+            <section className="w-full flex justify-center mt-26 xl:mt-64">
                 <div className="w-[90vw] mx-auto grid grid-cols-4 grid-rows-2 gap-6 xl:h-[40rem] h-[34rem]">
 
                     {/* div1 : image 1 */}
