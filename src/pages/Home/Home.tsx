@@ -71,20 +71,28 @@ function Home() {
 
             {/*HERO*/}
             <section className="relative w-full flex justify-center">
-                {/* Image hero */}
-                <img src="/home/hero-1.png" alt="Machine esthétique" className="w-[97.5%] h-auto"/>
+
+                <picture className="flex justify-center">
+                    <source srcSet="/home/hero-1-1.png" media="(max-width: 810px)"/>
+                    <img
+                        src="/home/hero-1.png"
+                        alt="Machine esthétique"
+                        className="w-[97.2%] h-auto rounded-[40px]"
+                    />
+                </picture>
 
                 {/* Texte superposé */}
-                <div className="absolute left-[5%] top-6 md:top-1/2 translate-y-0 md:-translate-y-1/2 max-w-[19rem] sm:max-w-[22rem] md:max-w-md">
+                <div
+                    className="absolute left-[5%] top-6 md:top-1/2 translate-y-0 md:-translate-y-1/2 max-w-[19rem] sm:max-w-[22rem] md:max-w-md">
                     <h1
                         className="font-medium text-2xl sm:text-3xl md:text-5xl xl:text-6xl
                                   leading-snug md:leading-tight xl:leading-[79px]
                                   tracking-[-0.02em] text-[#FCF8F1]
-                                  [text-shadow:_2px_2px_0px_rgba(73,73,73,0.4)]"
+                                  [text-shadow:_2px_2px_0px_rgba(73,73,73,0.4)] lg:[text-shadow:none]"
                     >
                         L’esthétique
-                        <br /> de la nouvelle
-                        <br /> génération
+                        <br/> de la nouvelle
+                        <br/> génération
                     </h1>
 
                     <p
@@ -92,7 +100,7 @@ function Home() {
                                   font-[Quicksand] font-medium
                                   text-xs sm:text-sm md:text-base
                                   leading-[1.4] tracking-[-0.01em] text-[#F6F6F6]
-                                  [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)]"
+                                  [text-shadow:_1px_1px_0px_rgba(73,73,73,0.4)] lg:[text-shadow:none]"
                     >
                         Des machines conçues pour les professionnels exigeants, alliant
                         efficacité, rentabilité et design.
@@ -117,48 +125,44 @@ function Home() {
             </section>
 
             {/*MACHINA*/}
-            <section className="w-full flex justify-center xl:mt-64">
-                <div className="w-[90vw] mx-auto grid grid-cols-4 grid-rows-2 gap-6 xl:h-[40rem] h-[34rem]">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
+                <div className="w-[94.6vw] flex justify-between">
 
-                    {/* div1 : image 1 */}
-                    <div className="rounded-[3rem] overflow-hidden hidden md:block">
-                        <img src="/home/machina/image-1.png" alt="Image 1" className="w-full h-full object-cover" />
-                    </div>
-
-                    {/* div2 : image 2 */}
-                    <div className="rounded-[3rem] overflow-hidden col-start-1 row-start-2 hidden md:block">
-                        <img src="/home/machina/image-2.png" alt="Image 2" className="w-full h-full object-cover" />
-                    </div>
-
-                    {/* div3 : grande image */}
-                    <div className="row-span-2 col-start-2 row-start-1 rounded-[3rem] overflow-hidden hidden md:block">
-                        <img src="/home/machina/image-3.png" alt="Image 3" className="w-full h-full object-cover" />
-                    </div>
+                    <img
+                        src="/home/machina/hero.png"
+                        alt="Image 1"
+                        className="w-[46%] h-auto hidden md:block"
+                    />
 
                     {/* div4 : texte */}
-                    <div className="col-span-4 md:col-span-2 row-span-2 col-start-1 md:col-start-3 row-start-1 flex items-center justify-center h-full">
-                        <div className="max-w-xl space-y-6 text-center md:text-left">
-                            <div className="font-semibold text-2xl md:text-3xl xl:text-4xl leading-snug text-[#0A0F1C]">
+                    <div className="flex items-center justify-start h-full">
+                        <div className="max-w-[43vw] text-left">
+
+                            <div className="font-semibold text-lg md:text-xl xl:text-3xl leading-snug text-[#0A0F1C]">
                                 Des machines conçues pour l’excellence
                             </div>
-                            <div className="text-base md:text-lg leading-relaxed text-[#0A0F1C]/70 my-8 md:my-12">
+
+                            <div className="text-lg md:text-xl font-normal text-[#0A0F1C]/80 py-12 md:my-6">
                                 Découvrez une sélection de nos équipements haut de gamme, conçus pour allier performance,
-                                innovation et rentabilité. Chaque machine est pensée pour répondre aux besoins des professionnels
+                                innovation et rentabilité. <br/>
+                                Chaque machine est pensée pour répondre aux besoins des professionnels
                                 exigeants du secteur esthétique et médical.
                             </div>
+
                             <Link
                                 to="/products"
-                                className="inline-flex items-center justify-center px-9 py-4 rounded-full bg-[#0B1524] text-white text-base font-medium hover:brightness-110 transition"
+                                className="inline-flex items-center justify-center px-9 py-5 rounded-full bg-[#0B1524] text-[#FCF8F1] text-lg md:text-xl font-medium hover:brightness-110 transition"
                             >
                                 Voir nos machines
                             </Link>
                         </div>
                     </div>
                 </div>
+
             </section>
 
             {/*BELGIUM*/}
-            <section className="w-full flex justify-center xl:my-50">
+            <section className="w-full flex justify-center my-25 xl:my-50">
                 <div className="w-[97%] mx-auto">
                     {/* Bloc texte centré */}
                     <div className="text-center">
@@ -213,24 +217,24 @@ function Home() {
 
             {/*DEMO*/}
             <section className="w-full flex justify-center mt-32 xl:mt-64">
-                <div className="w-[90%] mx-auto">
+                <div className="w-[97.5%] mx-auto">
                     {/* En-tête */}
-                    <header className="mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                        <div className="max-w-[40rem]">
-                            <p className="text-lg xl:text-2xl leading-9 text-[#0A0F1C]">
+                    <header className="pl-6 mb-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                        <div className="max-w-[40vw]">
+                            <p className="text-lg xl:text-3xl leading-11 text-[#0A0F1C]">
                                 Découvrez des dispositifs esthétiques et médicaux {" "}
                                 <span className="text-[#0A0F1C]/50">
-                                    de pointe, alliant innovation, fiabilité et expertise professionnelle
+                                    de pointe, alliant innovation, fiabilité et  expertise professionnelle pour des résultats d’exception
                                 </span>
                             </p>
                         </div>
 
                         <Link
                             to="/products"
-                            className="self-end md:self-center mt-4 md:mt-1 inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
+                            className="self-end md:self-center mt-4 md:mt-1 mr-8 inline-flex items-center gap-2 text-[#0A0F1C] hover:opacity-80"
                         >
-                            VOIR PLUS
-                            <img src="/home/link.svg" alt="" className="hidden md:block" />
+                            <span className="mt-8 ">VOIR PLUS</span>
+                            <img src="/home/link.svg" alt="" className="hidden md:block w-12"/>
                         </Link>
                     </header>
 
@@ -253,8 +257,8 @@ function Home() {
                             </motion.div>
                         </AnimatePresence>
 
-                        <div className="relative overflow-hidden rounded-[1.5rem]">
-                            <img src="/home/hero-2.png" alt="" className="w-full h-auto object-cover" />
+                        <div className="relative overflow-hidden rounded-[3rem]">
+                            <img src="/home/hero-2.png" alt="" className="w-full h-auto xl:h-[88vh] object-cover" />
 
                             {/* Produit animé */}
                             <AnimatePresence mode="wait">
@@ -266,14 +270,14 @@ function Home() {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 1.05 }}
                                     transition={{ duration: 0.4, ease: "easeOut" }}
-                                    className="absolute top-1/2 left-1/2 translate-y-[-30%] translate-x-[20%] max-h-[60%] max-w-[50%] w-auto object-contain pointer-events-none z-20"
+                                    className="absolute top-1/2 right-1/6 translate-y-[-30%] translate-x-[20%] max-h-[60%] max-w-[50%] w-auto object-contain pointer-events-none z-20"
                                 />
                             </AnimatePresence>
 
                             {/* Contenu interne */}
                             <div className="absolute inset-0 px-6 md:px-10 xl:px-14 xl:pt-14 pb-14">
                                 {/* Liste (desktop uniquement) */}
-                                <ul className="space-y-4 hidden xl:block">
+                                <ul className="space-y-8 hidden xl:block">
                                     {esthetiqueItems.map((it, i) => {
                                         const isActive = i === indexEsthetique;
                                         return (
@@ -362,7 +366,7 @@ function Home() {
                         </AnimatePresence>
 
                         <div className="relative overflow-hidden rounded-[1.5rem]">
-                            <img src="/home/hero-2.png" alt="" className="w-full h-auto object-cover" />
+                            <img src="/home/hero-2.png" alt="" className="w-full h-auto xl:h-[88vh] object-cover" />
 
                             {/* Produit animé */}
                             <AnimatePresence mode="wait">
@@ -374,7 +378,7 @@ function Home() {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 1.05 }}
                                     transition={{ duration: 0.4, ease: "easeOut" }}
-                                    className="absolute top-1/2 left-1/2 translate-y-[-30%] translate-x-[20%] max-h-[60%] max-w-[50%] w-auto object-contain pointer-events-none z-20"
+                                    className="absolute top-1/2 right-1/6 translate-y-[-30%] translate-x-[20%] max-h-[60%] max-w-[50%] w-auto object-contain pointer-events-none z-20"
                                 />
                             </AnimatePresence>
 
@@ -456,7 +460,7 @@ function Home() {
 
             {/*CERTIFICATE*/}
             <section className="w-full flex justify-center mt-32 xl:mt-64">
-                <div className="w-[90vw] mx-auto flex flex-col gap-10">
+                <div className="w-[98vw] mx-auto flex flex-col gap-10">
 
                     {/* Partie haute : titre + lien */}
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -473,7 +477,7 @@ function Home() {
                             to="/products"
                             className="self-end md:self-auto inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
                         >
-                            VOIR PLUS
+                            EN SAVOIR PLUS
                             <img src="/home/link.svg" alt="" className="hidden md:block"/>
                         </Link>
                     </div>
@@ -485,7 +489,7 @@ function Home() {
                         <div className="flex-1 flex flex-col gap-8">
                             {/* Item 1 */}
                             <div className="flex items-start gap-4 w-full">
-                                <img src="/home/certificate.png" alt="Certification" className="h-15 w-15"/>
+                                <img src="/home/certificate.svg" alt="Certification" className="w-15"/>
                                 <div className="text-[#0A0F1C]">
                                     <div className="font-medium text-xl xl:text-2xl">Certification CA</div>
                                     <div className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
@@ -496,7 +500,7 @@ function Home() {
 
                             {/* Item 2 */}
                             <div className="flex items-start gap-4 w-full">
-                                <img src="/home/diamond.png" alt="Certification" className="h-15 w-15"/>
+                                <img src="/home/diamond.svg" alt="Certification" className="w-15"/>
                                 <div className="text-[#0A0F1C]">
                                     <div className="font-medium text-xl xl:text-2xl">Fabrication Coréenne</div>
                                     <div className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
@@ -507,7 +511,7 @@ function Home() {
 
                             {/* Item 3 */}
                             <div className="flex items-start gap-4 w-full">
-                                <img src="/home/heart.png" alt="Certification" className="h-15 w-15"/>
+                                <img src="/home/heart.svg" alt="Certification" className="w-15"/>
                                 <div className="text-[#0A0F1C]">
                                     <div className="font-medium text-xl xl:text-2xl">Expertise médicale</div>
                                     <div className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
@@ -518,7 +522,7 @@ function Home() {
 
                             {/* Item 4 */}
                             <div className="flex items-start gap-4 w-full">
-                                <img src="/home/light.png" alt="Certification" className="h-15 w-15"/>
+                                <img src="/home/light.svg" alt="Certification" className="w-15"/>
                                 <div className="text-[#0A0F1C]">
                                     <div className="font-medium text-xl xl:text-2xl">Innovation et fiabilité</div>
                                     <div className="mt-2 text-lg xl:text-xl text-[#0A0F1C]/70">
@@ -544,84 +548,84 @@ function Home() {
             <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[95%] mx-auto">
                     {/* Titre unique (début en gras) */}
-                    <p className="text-center text-[#0A0F1C] text-[22px] sm:text-[24px] leading-10 max-w-[48rem] mx-auto">
-                        <span className="font-medium">Nous vous accompagnons avec expertise</span> <span className="text-[#0A0F1C]/50">et conseils personnalisés, de la sélection de matériels <br/> innovants à la formation et au support</span>
+                    <p className="text-center text-[#0A0F1C] text-3xl leading-10 max-w-[48rem] mx-auto">
+                        Nous vous accompagnons avec expertise <span className="text-[#0A0F1C]/50">et conseils personnalisés, de la sélection de matériels <br/> innovants à la formation et au support</span>
                     </p>
 
                     {/* Grille de cartes — largeur contenue + images moins hautes */}
-                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-[90vw] mx-auto mt-20">
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-[92vw] mx-auto mt-20">
+
                         {/* Carte 1 */}
-                        <article className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
-                            <div className="h-[200px] md:h-[220px] lg:h-[230px]">
+                        <article className="bg-[#FDFDFF] rounded-[40px] h-fit">
+                            <div>
                                 <img
                                     src="/home/expertise/image-1.jpg"
                                     alt="Conseil personnalisé"
-                                    className="w-full h-full object-cover rounded-[2rem]"
+                                    className="w-full h-full rounded-t-[40px] rounded-b-[30px]"
                                 />
                             </div>
-                            <div className="p-6 text-left">
-                                <h4 className="font-[Montserrat] font-medium text-lg sm:text-xl text-[#0A0F1C] mb-8">
+                            <div className="p-8 text-left">
+                                <h4 className="text-lg sm:text-2xl text-[#0A0F1C] mb-8">
                                     Conseil personnalisé
                                 </h4>
-                                <p className="mt-2 text-lg leading-relaxed text-[#0A0F1C]/70">
+                                <p className="p-2 text-lg leading-relaxed text-[#0A0F1C]/60">
                                     Nous analysons vos besoins et vous guidons vers la solution la plus adaptée.
                                 </p>
                             </div>
                         </article>
 
                         {/* Carte 2 */}
-                        <article className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
-                            <div className="h-[200px] md:h-[220px] lg:h-[230px]">
+                        <article className="bg-[#FDFDFF] rounded-[40px] h-fit">
+                            <div>
                                 <img
                                     src="/home/expertise/image-2.jpg"
-                                    alt="Accompagnement complet"
-                                    className="w-full h-full object-cover rounded-[2rem]"
+                                    alt="Conseil personnalisé"
+                                    className="w-full h-full rounded-t-[40px] rounded-b-[30px]"
                                 />
                             </div>
-                            <div className="p-6 text-left">
-                                <h4 className="font-[Montserrat] font-medium text-lg sm:text-xl text-[#0A0F1C] mb-8">
+                            <div className="p-8 text-left">
+                                <h4 className="text-lg sm:text-2xl text-[#0A0F1C] mb-8">
                                     Achat
                                 </h4>
-                                <p className="mt-2 text-lg leading-relaxed text-[#0A0F1C]/70 mb-6">
+                                <p className="p-2 text-lg leading-relaxed text-[#0A0F1C]/60">
                                     Un accompagnement clair et transparent pour un investissement en toute confiance.
                                 </p>
                             </div>
                         </article>
 
                         {/* Carte 3 */}
-                        <article className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
-                            <div className="h-[200px] md:h-[220px] lg:h-[230px]">
+                        <article className="bg-[#FDFDFF] rounded-[40px] h-fit">
+                            <div>
                                 <img
                                     src="/home/expertise/image-3.jpg"
-                                    alt="Service Après-Vente"
-                                    className="w-full h-full object-cover rounded-[2rem]"
+                                    alt="Conseil personnalisé"
+                                    className="w-full h-full rounded-t-[40px] rounded-b-[30px]"
                                 />
                             </div>
-                            <div className="p-6 text-left">
-                                <h4 className="font-[Montserrat] font-medium text-lg sm:text-xl text-[#0A0F1C] mb-8">
+                            <div className="p-8 text-left">
+                                <h4 className="text-lg sm:text-2xl text-[#0A0F1C] mb-8">
                                     Installation et formation
                                 </h4>
-                                <p className="mt-2 text-lg leading-relaxed text-[#0A0F1C]/70">
-                                    Mise en place rapide et formation complète
-                                    pour une prise en main optimale.
+                                <p className="p-2 text-lg leading-relaxed text-[#0A0F1C]/60">
+                                    Mise en place rapide et formation complète pour une prise en main optimale.
                                 </p>
                             </div>
                         </article>
 
                         {/* Carte 4 */}
-                        <article className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-black/5">
-                            <div className="h-[200px] md:h-[220px] lg:h-[230px]">
+                        <article className="bg-[#FDFDFF] rounded-[40px] h-fit">
+                            <div>
                                 <img
                                     src="/home/expertise/image-4.png"
-                                    alt="Service Après-Vente"
-                                    className="w-full h-full object-cover rounded-[2rem]"
+                                    alt="Conseil personnalisé"
+                                    className="w-full h-full rounded-t-[40px] rounded-b-[30px]"
                                 />
                             </div>
-                            <div className="p-6 text-left">
-                                <h4 className="font-[Montserrat] font-medium text-lg sm:text-xl text-[#0A0F1C] mb-8">
+                            <div className="p-8 text-left">
+                                <h4 className="text-lg sm:text-2xl text-[#0A0F1C] mb-8">
                                     Service Après-Vente
                                 </h4>
-                                <p className="mt-2 text-lg leading-relaxed text-[#0A0F1C]/70">
+                                <p className="p-2 text-lg leading-relaxed text-[#0A0F1C]/60">
                                     Un suivi réactif et durable pour assurer la performance de vos équipements.
                                 </p>
                             </div>
@@ -634,9 +638,9 @@ function Home() {
             <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[100vw] mx-auto">
                     {/* Titre */}
-                    <div className="text-center max-w-[45rem] mx-auto">
+                    <div className="text-center max-w-[40vw] mx-auto">
                         <p className="text-[#0A0F1C] text-3xl leading-10">
-                            Découvrez l’excellence de nos équipements,{" "}
+                            Découvrez l’excellence de nos équipements,{" "} <br/>
                             <span className="text-[#0A0F1C]/60">des technologies esthétiques conçues pour durer et performer.</span>
                         </p>
                     </div>

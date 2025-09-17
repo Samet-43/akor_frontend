@@ -18,7 +18,7 @@ function Navbar() {
     return (
         <>
             <header
-                className={`sticky z-50 w-full transition-colors duration-300 ${
+                className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
                     scrolled ? "bg-[#f6f6f6]" : "bg-transparent"
                 }`}
             >
