@@ -18,9 +18,9 @@ function Navbar() {
     return (
         <>
             <header
-                className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
-                    scrolled ? "bg-[#f6f6f6]" : "bg-transparent"
-                }`}
+                className={`${
+                    scrolled ? "sticky bg-[#f6f6f6]" : "absolute bg-transparent"
+                } top-0 left-0 z-50 w-full transition-colors duration-300`}
             >
                 <nav className="h-20 w-full px-6 md:px-10 flex items-center">
                     {/* FLEX 1 : logo */}

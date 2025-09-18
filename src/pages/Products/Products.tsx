@@ -31,7 +31,7 @@ function Products() {
     return (
         <>
             {/*HERO*/}
-            <section className="relative w-full">
+            <section className="relative w-full ">
                 {/* Fond */}
                 <img
                     src="/products/bg-text.jpg"
