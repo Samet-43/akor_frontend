@@ -1,37 +1,48 @@
-import {useEffect, useState} from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { productsData } from "../../../data/products";
 
 function Navbar() {
     const [open, setOpen] = useState(false);
-
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 0);
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 0);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // ✅ Pages où la navbar doit être "absolute au top"
+    const isSpecialPage =
+        location.pathname === "/about-us" ||
+        location.pathname === "/products" ||
+        location.pathname.startsWith("/products/");
 
     return (
         <>
             <header
                 className={`${
-                    scrolled ? "sticky bg-[#f6f6f6]" : "absolute bg-transparent"
+                    isSpecialPage
+                        ? scrolled
+                            ? "sticky bg-[#f6f6f6]"
+                            : "absolute bg-transparent"
+                        : "sticky bg-[#f6f6f6]"
                 } top-0 left-0 z-50 w-full transition-colors duration-300`}
             >
                 <nav className="h-20 w-full px-6 md:px-10 flex items-center">
                     {/* FLEX 1 : logo */}
                     <Link to="/" className="flex items-center gap-3 shrink-0">
-                        <img src="/akor_logo.png" alt="Akor Aesthetics" className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32" />
+                        <img
+                            src="/akor_logo.png"
+                            alt="Akor Aesthetics"
+                            className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32"
+                        />
                         <span className="sr-only">Accueil</span>
                     </Link>
 
-                    {/* FLEX 2 : menu + bouton (justify-end + gap 3rem) */}
+                    {/* FLEX 2 : menu desktop */}
                     <div className="ml-auto hidden md:flex items-center justify-end gap-[3rem]">
-                        {/* Menu desktop */}
                         <ul className="flex items-center gap-8">
                             <li>
                                 <NavLink
@@ -58,7 +69,7 @@ function Navbar() {
                                 >
                                     Nos technologies
                                     <svg
-                                        className="hidden xl:block size-4 transition-transform group-hover:rotate-180 "
+                                        className="hidden xl:block size-4 transition-transform group-hover:rotate-180"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
@@ -110,7 +121,12 @@ function Navbar() {
                         onClick={() => setOpen(true)}
                     >
                         <svg viewBox="0 0 24 24" className="size-6">
-                            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                            <path
+                                d="M3 6h18M3 12h18M3 18h18"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                            />
                         </svg>
                     </button>
                 </nav>
@@ -119,22 +135,36 @@ function Navbar() {
                 {open && (
                     <div className="fixed inset-0 z-50 bg-white">
                         <div className="h-20 px-6 flex items-center justify-between">
-                            <img src="/akor_logo.png" alt="Akor Aesthetics" className="h-8 select-none" />
+                            <img
+                                src="/akor_logo.png"
+                                alt="Akor Aesthetics"
+                                className="h-8 select-none"
+                            />
                             <button
                                 className="inline-flex items-center justify-center size-10 rounded-full"
                                 aria-label="Fermer le menu"
                                 onClick={() => setOpen(false)}
                             >
                                 <svg viewBox="0 0 24 24" className="size-6">
-                                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                                    <path
+                                        d="M6 6l12 12M18 6L6 18"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                    />
                                 </svg>
                             </button>
                         </div>
 
                         <div className="px-6 py-8 space-y-4 text-lg">
-                            <Link to="/" onClick={() => setOpen(false)} className="block py-3">Accueil</Link>
+                            <Link
+                                to="/"
+                                onClick={() => setOpen(false)}
+                                className="block py-3"
+                            >
+                                Accueil
+                            </Link>
 
-                            {/* Lien simple vers page Produits */}
                             <Link
                                 to="/products"
                                 onClick={() => setOpen(false)}
@@ -143,12 +173,11 @@ function Navbar() {
                                 Nos technologies
                             </Link>
 
-                            {/* Dropdown des technologies */}
                             <details className="py-3">
                                 <summary className="cursor-pointer list-none flex items-center justify-between">
-                                    listes des technologies
+                                    Listes des technologies
                                     <svg className="size-4" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
+                                        <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
                                     </svg>
                                 </summary>
                                 <div className="mt-3 pl-3 space-y-2">
@@ -165,7 +194,13 @@ function Navbar() {
                                 </div>
                             </details>
 
-                            <Link to="/about-us" onClick={() => setOpen(false)} className="block py-3">À propos</Link>
+                            <Link
+                                to="/about-us"
+                                onClick={() => setOpen(false)}
+                                className="block py-3"
+                            >
+                                À propos
+                            </Link>
                             <Link
                                 to="/contact"
                                 onClick={() => setOpen(false)}
