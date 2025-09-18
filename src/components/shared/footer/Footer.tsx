@@ -250,8 +250,8 @@ function Footer() {
                             <div className="flex-1 min-w-[12rem] max-w-[18rem] order-2">
                                 <ul className="space-y-6 text-[clamp(0.9rem,1.1vw,1rem)] leading-[1.6]">
                                     <li><Link to="/" className="hover:opacity-80">Accueil</Link></li>
-                                    <li><Link to="/product" className="hover:opacity-80">Technologies</Link></li>
-                                    <li><Link to="/blog" className="hover:opacity-80">Blog</Link></li>
+                                    <li><Link to="/products" className="hover:opacity-80">Technologies</Link></li>
+                                    <li><Link to="/blog" className="hover:opacity-80 hidden">Blog</Link></li>
                                     <li><Link to="/about-us" className="hover:opacity-80">À propos</Link></li>
                                     <li><Link to="/contact" className="hover:opacity-80">Contact</Link></li>
                                 </ul>

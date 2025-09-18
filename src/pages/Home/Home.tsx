@@ -66,9 +66,32 @@ function Home() {
     const activeEsthetique = esthetiqueItems[indexEsthetique];
     const activeAnalyse = analyseItems[indexAnalyse];
 
+    useEffect(() => {
+        // Clonage automatique comme dans le CodePen
+        document.querySelectorAll<HTMLElement>(".marquee").forEach((marquee) => {
+            const content = marquee.querySelector<HTMLElement>(".marquee-content");
+            if (!content) return;
+
+            const displayed = parseInt(
+                getComputedStyle(marquee).getPropertyValue(
+                    "--marquee-elements-displayed"
+                ),
+                10
+            );
+            const elements = content.children.length;
+            marquee.style.setProperty("--marquee-elements", elements.toString());
+
+            // On clone les premiers éléments pour éviter le "saut"
+            for (let i = 0; i < displayed; i++) {
+                const clone = content.children[i].cloneNode(true);
+                content.appendChild(clone);
+            }
+        });
+    }, []);
+
+
     return (
         <>
-
             {/*HERO*/}
             <section className="relative w-full flex justify-center">
 
@@ -136,7 +159,7 @@ function Home() {
 
                     {/* div4 : texte */}
                     <div className="flex items-center justify-start h-full">
-                        <div className="max-w-[43vw] text-left">
+                        <div className="max-w-[95vw] xl:max-w-[43vw] text-center xl:text-left">
 
                             <div className="font-semibold text-lg md:text-xl xl:text-3xl leading-snug text-[#0A0F1C]">
                                 Des machines conçues pour l’excellence
@@ -220,7 +243,7 @@ function Home() {
                 <div className="w-[97.5%] mx-auto">
                     {/* En-tête */}
                     <header className="pl-6 mb-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                        <div className="max-w-[40vw]">
+                        <div className="max-w-[95vw] lg:max-w-[50vw] xl:max-w-[40vw]">
                             <p className="text-lg xl:text-3xl leading-11 text-[#0A0F1C]">
                                 Découvrez des dispositifs esthétiques et médicaux {" "}
                                 <span className="text-[#0A0F1C]/50">
@@ -231,7 +254,7 @@ function Home() {
 
                         <Link
                             to="/products"
-                            className="self-end md:self-center mt-4 md:mt-1 mr-8 inline-flex items-center gap-2 text-[#0A0F1C] hover:opacity-80"
+                            className="self-end md:self-center md:mt-1 mr-8 inline-flex items-center gap-2 text-[#0A0F1C] hover:opacity-80"
                         >
                             <span className="mt-8 ">VOIR PLUS</span>
                             <img src="/home/link.svg" alt="" className="hidden md:block w-12"/>
@@ -460,7 +483,7 @@ function Home() {
 
             {/*CERTIFICATE*/}
             <section className="w-full flex justify-center mt-32 xl:mt-64">
-                <div className="w-[98vw] mx-auto flex flex-col gap-10">
+                <div className="w-[90vw] lg:w-[98vw] mx-auto flex flex-col gap-10">
 
                     {/* Partie haute : titre + lien */}
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -475,9 +498,9 @@ function Home() {
 
                         <Link
                             to="/products"
-                            className="self-end md:self-auto inline-flex items-center gap-2 text-[#0A0F1C] text-lg hover:opacity-80"
+                            className="self-end md:self-auto inline-flex items-center gap-2 text-[#0A0F1C] hover:opacity-80"
                         >
-                            EN SAVOIR PLUS
+                            <span className="mt-8">EN SAVOIR PLUS</span>
                             <img src="/home/link.svg" alt="" className="hidden md:block"/>
                         </Link>
                     </div>
@@ -486,7 +509,7 @@ function Home() {
                     <div className="flex flex-col md:flex-row gap-10 mt-20">
 
                         {/* Colonne gauche */}
-                        <div className="flex-1 flex flex-col gap-8">
+                        <div className="flex-1 flex flex-col justify-evenly gap-8 ml-none xl:ml-8">
                             {/* Item 1 */}
                             <div className="flex items-start gap-4 w-full">
                                 <img src="/home/certificate.svg" alt="Certification" className="w-15"/>
@@ -616,7 +639,7 @@ function Home() {
                         <article className="bg-[#FDFDFF] rounded-[40px] h-fit">
                             <div>
                                 <img
-                                    src="/home/expertise/image-4.png"
+                                    src="/home/expertise/image-4.jpg"
                                     alt="Conseil personnalisé"
                                     className="w-full h-full rounded-t-[40px] rounded-b-[30px]"
                                 />
@@ -638,10 +661,12 @@ function Home() {
             <section className="w-full flex justify-center mt-32 xl:mt-64">
                 <div className="w-[100vw] mx-auto">
                     {/* Titre */}
-                    <div className="text-center max-w-[40vw] mx-auto">
+                    <div className="text-center max-w-[95vw] lg:max-w-[40vw] mx-auto">
                         <p className="text-[#0A0F1C] text-3xl leading-10">
-                            Découvrez l’excellence de nos équipements,{" "} <br/>
-                            <span className="text-[#0A0F1C]/60">des technologies esthétiques conçues pour durer et performer.</span>
+                            Découvrez l’excellence de nos équipements, <br />
+                            <span className="text-[#0A0F1C]/60">
+                              des technologies esthétiques conçues pour durer et performer.
+                            </span>
                         </p>
                     </div>
 
@@ -649,52 +674,76 @@ function Home() {
                     <div className="mt-20"></div>
 
                     {/* Ligne 1 */}
-                    <div className="relative overflow-hidden">
-                        <div className="flex flex-nowrap gap-6 min-w-max animate-[scroll-x_35s_linear_infinite]">
-                            {[1,2,3,4].map(i => (
-                                <figure key={`r1-a-${i}`} className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden">
-                                    <img src={`/home/equipment/image-${i}.jpg`} alt="" className="w-full h-full object-cover" />
-                                </figure>
+                    <div className="marquee">
+                        <ul className="marquee-content">
+                            {[1, 2, 3, 4].map((i) => (
+                                <li
+                                    key={`r1-${i}`}
+                                    className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden"
+                                >
+                                    <img
+                                        src={`/home/equipment/image-${i}.jpg`}
+                                        alt=""
+                                        className="w-full h-full object-cover"
+                                    />
+                                </li>
                             ))}
-                            {[1,2,3,4].map(i => (
-                                <figure key={`r1-b-${i}`} className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden">
-                                    <img src={`/home/equipment/image-${i}.jpg`} alt="" className="w-full h-full object-cover" />
-                                </figure>
-                            ))}
-                        </div>
+                        </ul>
                     </div>
 
                     {/* espace */}
                     <div className="mt-6"></div>
 
-                    {/* Ligne 2 (sens inverse) */}
-                    <div className="relative overflow-hidden">
-                        <div className="flex flex-nowrap gap-6 min-w-max animate-[scroll-x-rev_35s_linear_infinite]">
-                            {[5,6,7,8].map(i => (
-                                <figure key={`r2-a-${i}`} className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden">
-                                    <img src={`/home/equipment/image-${i}.jpg`} alt="" className="w-full h-full object-cover" />
-                                </figure>
+                    {/* Ligne 2 (inverse) */}
+                    <div className="marquee reverse">
+                        <ul className="marquee-content">
+                            {[5, 6, 7, 8].map((i) => (
+                                <li
+                                    key={`r2-${i}`}
+                                    className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden"
+                                >
+                                    <img
+                                        src={`/home/equipment/image-${i}.jpg`}
+                                        alt=""
+                                        className="w-full h-full object-cover"
+                                    />
+                                </li>
                             ))}
-                            {[5,6,7,8].map(i => (
-                                <figure key={`r2-b-${i}`} className="flex-none w-[26rem] h-[12rem] rounded-[1.25rem] overflow-hidden">
-                                    <img src={`/home/equipment/image-${i}.jpg`} alt="" className="w-full h-full object-cover" />
-                                </figure>
-                            ))}
-                        </div>
+                        </ul>
                     </div>
                 </div>
 
-                {/* CSS pur pour l’animation */}
+                {/* Styles */}
                 <style>{`
-                        @keyframes scroll-x {
-                          0%   { transform: translateX(0); }
-                          100% { transform: translateX(-50%); }
-                        }
-                        @keyframes scroll-x-rev {
-                          0%   { transform: translateX(-50%); }
-                          100% { transform: translateX(0); }
-                        }
-                      `}</style>
+                    :root {
+                      --marquee-width: 100vw;
+                      --marquee-height: 12rem;
+                      --marquee-elements-displayed: 4; /* combien d'éléments visibles */
+                    }
+            
+                    .marquee {
+                      width: var(--marquee-width);
+                      overflow: hidden;
+                      position: relative;
+                      height: var(--marquee-height);
+                    }
+            
+                    .marquee-content {
+                      list-style: none;
+                      display: flex;
+                      gap: 1.5rem;
+                      animation: scrolling 35s linear infinite;
+                    }
+            
+                    .marquee.reverse .marquee-content {
+                      animation-direction: reverse;
+                    }
+            
+                    @keyframes scrolling {
+                      from { transform: translateX(0); }
+                      to   { transform: translateX(calc(-1 * var(--marquee-width))); }
+                    }
+                `}</style>
             </section>
 
             {/*BOOK A DEMO*/}
