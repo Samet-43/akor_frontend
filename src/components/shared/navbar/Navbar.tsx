@@ -19,6 +19,8 @@ function Navbar() {
         location.pathname === "/products" ||
         location.pathname.startsWith("/products/");
 
+    // const isProductDetailPage = location.pathname === "/products/";
+
     return (
         <>
             <header
@@ -28,9 +30,9 @@ function Navbar() {
                             ? "sticky bg-[#f6f6f6]"
                             : "absolute bg-transparent"
                         : "sticky bg-[#f6f6f6]"
-                } top-0 left-0 z-50 w-full transition-colors duration-300`}
+                } top-0 left-0 z-50 w-full transition-colors duration-300 p-4`}
             >
-                <nav className="h-20 w-full px-6 md:px-10 flex items-center">
+                <nav className="h-20 w-full px-6 md:px-10 flex items-center text-lg">
                     {/* FLEX 1 : logo */}
                     <Link to="/" className="flex items-center gap-3 shrink-0">
                         <img
@@ -42,7 +44,7 @@ function Navbar() {
                     </Link>
 
                     {/* FLEX 2 : menu desktop */}
-                    <div className="ml-auto hidden md:flex items-center justify-end gap-[3rem]">
+                    <div className="ml-auto hidden md:flex items-center justify-end gap-[4rem]">
                         <ul className="flex items-center gap-8">
                             <li>
                                 <NavLink
@@ -108,7 +110,7 @@ function Navbar() {
                         {/* Bouton contact */}
                         <Link
                             to="/contact"
-                            className="inline-flex h-12 px-6 items-center justify-center rounded-full bg-[#0A0F1C] text-white hover:opacity-90 transition"
+                            className="inline-flex h-13 px-6 items-center justify-center rounded-full bg-[#0A0F1C] text-white hover:opacity-90 transition"
                         >
                             Contact
                         </Link>

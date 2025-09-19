@@ -8,7 +8,7 @@ function AboutUs() {
             <section className="relative w-full">
                 {/* Image */}
                 <img
-                    src="/about-us/hero-1.png"
+                    src="/about-us/hero-1.jpg"
                     alt="About us hero"
                     className="w-full h-auto"
                 />
@@ -36,7 +36,7 @@ function AboutUs() {
             </section>
 
             {/*TECHNOLOGIE*/}
-            <section className="w-full py-10 md:py-14">
+            <section className="w-full py-10 md:py-14 mt-20">
                 <div className="mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 md:gap-8 items-stretch">
 

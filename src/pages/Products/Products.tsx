@@ -36,7 +36,7 @@ function Products() {
                 <img
                     src="/products/bg-text.jpg"
                     alt=""
-                    className="absolute inset-0 h-full w-full object-cover opacity-40 pointer-events-none select-none"
+                    className="absolute inset-0 h-full w-full opacity-40 pointer-events-none select-none"
                 />
 
                 {/* Contenu centré */}
