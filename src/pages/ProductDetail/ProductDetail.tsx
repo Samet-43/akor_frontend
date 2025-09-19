@@ -22,7 +22,7 @@ function ProductDetail() {
     return (
         <>
             {/*PRODUCT*/}
-            <section className="relative w-full">
+            <section className="relative w-full xl:h-[100vh]">
                 {/* Fond */}
                 <img
                     src="/productDetail/background-1.png"
@@ -34,7 +34,7 @@ function ProductDetail() {
                 <div className="relative flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 xl:px-32 py-10 lg:py-20 gap-10">
 
                     {/* Colonne gauche : texte */}
-                    <div className="text-[#FCF8F1] max-w-xl">
+                    <div className="text-[#FCF8F1] max-w-xl mt-20 xl:mt-40">
 
                         <p className="text-white text-sm pb-20 font-light">✨ Le produit le plus avancé pour les professionnels de l’esthétique</p>
 

@@ -19,7 +19,27 @@ function Navbar() {
         location.pathname === "/products" ||
         location.pathname.startsWith("/products/");
 
-    // const isProductDetailPage = location.pathname === "/products/";
+    // Page détail produit (pas la liste)
+    const isProductDetailPage =
+        location.pathname.startsWith("/products/") && location.pathname !== "/products";
+
+// Logo dynamique
+    const logoSrc =
+        isProductDetailPage && !scrolled
+            ? "/akor_logo_white.png"
+            : "/akor_logo.png";
+
+// Couleur des liens dynamique
+    const linkColor =
+        isProductDetailPage && !scrolled
+            ? "text-white hover:text-gray-200"
+            : "text-gray-700 hover:text-gray-900";
+
+    const contactButton =
+        isProductDetailPage && !scrolled
+            ? "bg-[#F6F6F6] text-[#0A0F1C] hover:opacity-90"
+            : "bg-[#0A0F1C] text-[#F6F6F6] hover:opacity-90";
+
 
     return (
         <>
@@ -30,13 +50,13 @@ function Navbar() {
                             ? "sticky bg-[#f6f6f6]"
                             : "absolute bg-transparent"
                         : "sticky bg-[#f6f6f6]"
-                } top-0 left-0 z-50 w-full transition-colors duration-300 p-4`}
+                } top-0 left-0 z-50 w-full transition-colors duration-300 px-4 pt-4`}
             >
                 <nav className="h-20 w-full px-6 md:px-10 flex items-center text-lg">
                     {/* FLEX 1 : logo */}
                     <Link to="/" className="flex items-center gap-3 shrink-0">
                         <img
-                            src="/akor_logo.png"
+                            src={logoSrc}
                             alt="Akor Aesthetics"
                             className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32"
                         />
@@ -51,9 +71,7 @@ function Navbar() {
                                     to="/"
                                     end
                                     className={({ isActive }) =>
-                                        isActive
-                                            ? "font-semibold text-gray-900"
-                                            : "text-gray-700 hover:text-gray-900"
+                                        `${linkColor} ${isActive ? "font-semibold" : ""}`
                                     }
                                 >
                                     Accueil
@@ -64,9 +82,7 @@ function Navbar() {
                                 <NavLink
                                     to="/products"
                                     className={({ isActive }) =>
-                                        isActive
-                                            ? "font-semibold text-gray-900 flex items-center gap-2"
-                                            : "text-gray-700 hover:text-gray-900 flex items-center gap-2"
+                                        `${linkColor} ${isActive ? "font-semibold" : ""} flex items-center gap-2`
                                     }
                                 >
                                     Nos technologies
@@ -97,9 +113,7 @@ function Navbar() {
                                 <NavLink
                                     to="/about-us"
                                     className={({ isActive }) =>
-                                        isActive
-                                            ? "font-semibold text-gray-900"
-                                            : "text-gray-700 hover:text-gray-900"
+                                        `${linkColor} ${isActive ? "font-semibold" : ""}`
                                     }
                                 >
                                     À propos
@@ -110,10 +124,11 @@ function Navbar() {
                         {/* Bouton contact */}
                         <Link
                             to="/contact"
-                            className="inline-flex h-13 px-6 items-center justify-center rounded-full bg-[#0A0F1C] text-white hover:opacity-90 transition"
+                            className={`inline-flex h-13 px-6 items-center justify-center rounded-full transition ${contactButton}`}
                         >
                             Contact
                         </Link>
+
                     </div>
 
                     {/* Burger mobile */}

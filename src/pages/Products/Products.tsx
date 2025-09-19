@@ -31,7 +31,7 @@ function Products() {
     return (
         <>
             {/*HERO*/}
-            <section className="relative w-full ">
+            <section className="relative w-full xl:h-[80vh]">
                 {/* Fond */}
                 <img
                     src="/products/bg-text.jpg"
@@ -41,7 +41,7 @@ function Products() {
 
                 {/* Contenu centré */}
                 <div className="relative flex flex-col items-center justify-center px-6 lg:px-12 xl:px-40 py-16 lg:py-24 xl:py-28 min-h-[50vh] lg:min-h-[60vh]">
-                    <div className="text-center font-medium">
+                    <div className="text-center font-medium mt-30">
                         {/* Ligne 1 (gris) */}
                         <p className="text-[#0A0F1C]/50 tracking-[-0.02em]
                                       text-2xl lg:text-4xl xl:text-5xl leading-tight">
