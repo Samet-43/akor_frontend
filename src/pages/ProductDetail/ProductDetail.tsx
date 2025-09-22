@@ -127,7 +127,7 @@ function ProductDetail() {
             </section>
 
             {/*EXPLANATION 2*/}
-            <section className="relative w-full">
+            <section className="relative w-[90vw] md:w-full mx-auto mt-32">
                 {/* Texte centré */}
                 <div className="text-center max-w-3xl mx-auto my-20">
                     <p className="text-lg xl:text-xl text-[#0A0F1C] leading-relaxed">
@@ -140,26 +140,27 @@ function ProductDetail() {
                     <img
                         src={`/productDetail/${id}/hero-3.png`}
                         alt={product?.title}
-                        className="w-[95vw]"
+                        className="w-[98vw]"
                     />
                 </div>
             </section>
 
             {/*TECHNOLOGY*/}
-            <section className="relative w-full mt-64">
-                <div className="flex flex-col lg:flex-row items-center gap-12">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
+                <div className="w-[90vw] lg:w-[98vw] mx-auto flex flex-col gap-10 lg:flex-row items-center lg:items-start">
 
                     {/* Image gauche */}
-                    <div className="flex justify-center xl:w-1/2 ">
+                    <div className="flex-1 flex justify-center">
                         <img
                             src={`/productDetail/${id}/hero-4.png`}
                             alt={product?.title}
+                            className="w-full h-auto object-cover"
                         />
                     </div>
 
                     {/* Texte + items droite */}
-                    <div className="xl:w-1/2 xl:max-w-[35vw] flex flex-row gap-4 p-6 xl:flex-col xl:gap-0 xl:px-0 space-y-6 ">
-                        <h2 className="font-semibold text-2xl xl:text-4xl leading-snug mb-20">
+                    <div className="flex-1 xl:max-w-[35vw] flex flex-col gap-10">
+                        <h2 className="font-semibold text-2xl xl:text-4xl leading-snug">
                             {product?.technology.title}
                             <span className="text-gray-500"> {product?.technology.description}</span>
                         </h2>
@@ -198,12 +199,12 @@ function ProductDetail() {
             </section>
 
             {/*ASSET*/}
-            <section className="relative w-full mt-64">
-                <div className="flex flex-col xl:flex-row items-center justify-center gap-12">
+            <section className="w-full flex justify-center mt-32 xl:mt-64">
+                <div className="w-[90vw] lg:w-[98vw] mx-auto flex flex-col gap-10 lg:flex-row items-center lg:items-start">
 
                     {/* Texte + items gauche */}
-                    <div className="xl:w-1/2 xl:max-w-[35vw] flex flex-row gap-4 p-6 xl:flex-col xl:gap-0 xl:px-0 space-y-6 ">
-                        <h2 className="font-semibold text-2xl xl:text-4xl leading-snug mb-20">
+                    <div className="flex-1 xl:max-w-[35vw] flex flex-col gap-10">
+                        <h2 className="font-semibold text-2xl xl:text-4xl leading-snug">
                             {product?.asset.title}
                             <span className="text-gray-500"> {product?.asset.description}</span>
                         </h2>
@@ -239,10 +240,11 @@ function ProductDetail() {
                     </div>
 
                     {/* Image droite */}
-                    <div className="flex justify-center xl:w-1/2">
+                    <div className="flex-1 flex justify-center">
                         <img
                             src={`/productDetail/${id}/hero-5.png`}
                             alt={product?.title}
+                            className="w-full h-auto object-cover"
                         />
                     </div>
 
@@ -252,19 +254,21 @@ function ProductDetail() {
             {/*GAINS*/}
             <section className="relative w-full py-20 mt-64 bg-[#C3CED5]">
 
-                <div className="w-screen flex justify-center text-center mb-32">
-                    <h2 className="text-[#0A0F1C] text-2xl xl:text-3xl leading-snug max-w-[36%]">
+                {/* Titre */}
+                <div className="w-full flex justify-center text-center mb-32 px-6">
+                    <h2 className="text-[#0A0F1C] text-xl sm:text-2xl xl:text-3xl leading-snug max-w-full md:max-w-[70%] xl:max-w-[36%]">
                         Estimez vos gains potentiels
                         <span className="text-[#0A0F1C]/50">
-                            {" "}et le temps nécessaire pour amortir votre investissement.
-                        </span>
+        {" "}et le temps nécessaire pour amortir votre investissement.
+      </span>
                     </h2>
                 </div>
+
                 <div className="px-6 xl:px-20 flex flex-col xl:flex-row justify-between items-center gap-16">
 
                     {/* Partie gauche : Liste des avantages */}
-                    <div className="text-[#0A0F1C] space-y-6 max-w-[50%]">
-                        <ul className="list-disc list-inside space-y-4 text-xl">
+                    <div className="text-[#0A0F1C] space-y-6 w-full md:max-w-[70%] xl:max-w-[50%]">
+                        <ul className="list-disc list-inside space-y-4 text-base sm:text-lg xl:text-xl">
                             <li>Innovant, grâce à la technologie avancée de l'IA et de la RA</li>
                             <li>Conseils de beauté personnalisés en quelques minutes</li>
                             <li>Conversions plus élevées, entraînant une augmentation des ventes</li>
@@ -275,53 +279,53 @@ function ProductDetail() {
                     </div>
 
                     {/* Partie droite : Bloc central gains */}
-                    <div className="bg-[#0A0F1C]/80 text-white rounded-[3rem] p-8 py-16 max-w-2xl w-full space-y-6">
+                    <div className="bg-[#0A0F1C]/80 text-white rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-8 py-10 sm:py-16 w-full max-w-full md:max-w-lg xl:max-w-2xl space-y-6">
 
                         {/* Ligne 1 */}
-                        <div className="grid grid-cols-2 items-center">
-                            <p className="font-light text-lg">Prix d’une analyse</p>
-                            <div className="flex items-center justify-between bg-[#575C65] rounded-full px-4 py-4">
-                                <span className="text-xl xl:text-3xl pl-6">30</span>
-                                <span className="text-lg xl:text-2xl font-light pr-6">Euros</span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-4">
+                            <p className="font-light text-base sm:text-lg">Prix d’une analyse</p>
+                            <div className="flex items-center justify-between bg-[#575C65] rounded-full px-4 py-3 sm:py-4">
+                                <span className="text-lg sm:text-xl xl:text-3xl pl-4 sm:pl-6">30</span>
+                                <span className="text-sm sm:text-lg xl:text-2xl font-light pr-4 sm:pr-6">Euros</span>
                             </div>
                         </div>
 
                         {/* Ligne 2 */}
-                        <div className="grid grid-cols-2 items-center">
-                            <p className="font-light text-lg">Nombre moyen d’analyses</p>
-                            <div className="flex items-center justify-between bg-[#575C65] rounded-full px-4 py-4">
-                                <span className="text-xl xl:text-3xl pl-6">4</span>
-                                <span className="text-lg xl:text-2xl font-light pr-6">Par jour</span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-4">
+                            <p className="font-light text-base sm:text-lg">Nombre moyen d’analyses</p>
+                            <div className="flex items-center justify-between bg-[#575C65] rounded-full px-4 py-3 sm:py-4">
+                                <span className="text-lg sm:text-xl xl:text-3xl pl-4 sm:pl-6">4</span>
+                                <span className="text-sm sm:text-lg xl:text-2xl font-light pr-4 sm:pr-6">Par jour</span>
                             </div>
                         </div>
 
-                        <hr className="border-gray-600 my-10" />
+                        <hr className="border-gray-600 my-6 sm:my-10" />
 
                         {/* Ligne 3 */}
-                        <div className="grid grid-cols-2 items-center">
-                            <p className="font-light text-xl">Revenus journaliers</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-4">
+                            <p className="font-light text-lg sm:text-xl">Revenus journaliers</p>
                             <div className="flex justify-end items-center gap-4">
-                                <span className="font-medium text-2xl xl:text-4xl">120</span>
-                                <span className="text-xl font-light px-12">Euros</span>
+                                <span className="font-medium text-xl sm:text-2xl xl:text-4xl">120</span>
+                                <span className="text-base sm:text-xl font-light px-6 sm:px-12">Euros</span>
                             </div>
                         </div>
 
                         {/* Ligne 4 */}
-                        <div className="grid grid-cols-2 items-center">
-                            <div className="text-xl">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-4">
+                            <div className="text-base sm:text-xl">
                                 <p className="font-semibold">Revenus mensuels</p>
-                                <p className="text-sm font-light">(sur 22 jours ouvrés)</p>
+                                <p className="text-xs sm:text-sm font-light">(sur 22 jours ouvrés)</p>
                             </div>
                             <div className="flex justify-end items-center gap-4">
-                                <span className="font-medium text-2xl xl:text-4xl">2.640</span>
-                                <span className="text-xl font-light px-12">Euros</span>
+                                <span className="font-medium text-xl sm:text-2xl xl:text-4xl">2.640</span>
+                                <span className="text-base sm:text-xl font-light px-6 sm:px-12">Euros</span>
                             </div>
                         </div>
 
                         <hr className="border-gray-600" />
 
                         {/* Résultat */}
-                        <p className="font-light">
+                        <p className="font-light text-sm sm:text-base">
                             <span className="font-semibold">Résultat ✨:</span>
                             <span className="font-medium"> En moins de 2 mois,</span> votre investissement dans le DermoSmart est amorti, et vous générez ensuite un bénéfice net.
                         </p>
@@ -332,26 +336,26 @@ function ProductDetail() {
 
             {/*Q&A*/}
             <section className="relative w-full mt-64">
-                <div className="px-6 xl:px-10 flex xl:flex-row justify-between items-start gap-12">
+                <div className="px-6 xl:px-10 flex flex-col xl:flex-row justify-between items-start gap-12">
 
                     {/* Partie gauche */}
-                    <div className="max-w-[30vw] xl:max-w-[25vw] flex flex-col justify-start space-y-6">
-                        <h2 className="text-[#0A0F1C] text-xl xl:text-2xl">
+                    <div className="w-full max-w-full xl:max-w-[25vw] flex flex-col justify-start space-y-6">
+                        <h2 className="text-[#0A0F1C] text-lg sm:text-xl xl:text-2xl">
                             <span>Des questions sur DermoSmart ? </span>
-                            <span className="text-gray-500">
+                            <span className="text-gray-500 block">
                               Notre équipe est à votre disposition pour vous informer et vous accompagner.
                             </span>
                         </h2>
                         <Link
                             to="/contact"
-                            className="w-fit px-6 py-3 rounded-full bg-[#0A0F1C] text-white font-medium"
+                            className="w-fit px-6 py-3 rounded-full bg-[#0A0F1C] text-white font-medium text-sm sm:text-base"
                         >
                             Contactez-nous →
                         </Link>
                     </div>
 
                     {/* Partie droite : FAQ */}
-                    <div className="w-1/2 space-y-4">
+                    <div className="w-full xl:w-1/2 space-y-4">
                         {[
                             "Le DermoSmart est-il facile à utiliser ?",
                             "Quels types de peau et de cheveux peut-il analyser ?",
@@ -362,13 +366,13 @@ function ProductDetail() {
                             <Disclosure key={i}>
                                 {({ open }) => (
                                     <div className="bg-[#EFEEEE] rounded-lg">
-                                        <DisclosureButton className="flex w-full justify-between items-center px-6 py-6 font-medium">
+                                        <DisclosureButton className="flex w-full justify-between items-center px-4 sm:px-6 py-4 sm:py-6 font-medium text-sm sm:text-base">
                                             {question}
                                             <ChevronDownIcon
                                                 className={`h-5 w-5 transition-transform ${open ? "rotate-180" : ""}`}
                                             />
                                         </DisclosureButton>
-                                        <DisclosurePanel className="px-6 pb-4 text-gray-600 text-sm">
+                                        <DisclosurePanel className="px-4 sm:px-6 pb-4 text-gray-600 text-sm">
                                             Réponse à la question "{question}" (à remplir).
                                         </DisclosurePanel>
                                     </div>
@@ -379,7 +383,6 @@ function ProductDetail() {
                 </div>
             </section>
 
-
             {/*TECHNICAL SHEET*/}
             <section className="relative w-full mt-32">
                 <div className="px-6 lg:px-20 xl:px-32">
@@ -387,14 +390,14 @@ function ProductDetail() {
                         Fiche techniques
                     </h2>
 
-                    <div className="grid grid-cols-[1.5fr_1fr_2fr] gap-x-8 gap-y-20 text-sm xl:text-base">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-[1.5fr_1fr_2fr] gap-x-8 gap-y-20 text-sm xl:text-base">
                         {/* Technologie */}
                         <div className="text-[#0A0F1C] text-lg font-medium">
                             {product?.technicalSheet.technologie.title}
                         </div>
-                        <div className="col-span-2 divide-y divide-gray-200">
+                        <div className="sm:col-span-1 xl:col-span-2 divide-y divide-gray-200">
                             {Object.values(product?.technicalSheet.technologie.details || {}).map((item, i) => (
-                                <div key={i} className="grid grid-cols-[1fr_2fr] gap-x-6 py-3">
+                                <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_2fr] gap-x-6 py-3">
                                     <span className="font-medium">{item.title}</span>
                                     <span className="text-gray-600">{item.description}</span>
                                 </div>
@@ -405,9 +408,9 @@ function ProductDetail() {
                         <div className="text-[#0A0F1C] text-lg font-medium">
                             {product?.technicalSheet.parametres.title}
                         </div>
-                        <div className="col-span-2 divide-y divide-gray-200">
+                        <div className="sm:col-span-1 xl:col-span-2 divide-y divide-gray-200">
                             {Object.values(product?.technicalSheet.parametres.details || {}).map((item, i) => (
-                                <div key={i} className="grid grid-cols-[1fr_2fr] gap-x-6 py-3">
+                                <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_2fr] gap-x-6 py-3">
                                     <span className="font-medium">{item.title}</span>
                                     <span className="text-gray-600">{item.description}</span>
                                 </div>
@@ -422,9 +425,9 @@ function ProductDetail() {
                                         <div className="text-[#0A0F1C] text-lg font-medium">
                                             {product?.technicalSheet.interface.title}
                                         </div>
-                                        <div className="col-span-2 divide-y divide-gray-200">
+                                        <div className="sm:col-span-1 xl:col-span-2 divide-y divide-gray-200">
                                             {Object.values(product?.technicalSheet.interface.details || {}).map((item, i) => (
-                                                <div key={i} className="grid grid-cols-[1fr_2fr] gap-x-6 py-3">
+                                                <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_2fr] gap-x-6 py-3">
                                                     <span className="font-medium">{item.title}</span>
                                                     <span className="text-gray-600">{item.description}</span>
                                                 </div>
@@ -433,7 +436,7 @@ function ProductDetail() {
                                     </DisclosurePanel>
 
                                     {/* Bouton voir plus */}
-                                    <div className="col-span-3 flex justify-center mt-6">
+                                    <div className="col-span-full flex justify-center mt-6">
                                         <DisclosureButton className="px-6 py-2 border border-gray-400 rounded-full text-sm font-medium hover:bg-gray-100 transition">
                                             {open ? "Voir moins" : "Voir plus"}
                                         </DisclosureButton>

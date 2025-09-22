@@ -134,7 +134,11 @@ function Navbar() {
                     {/* Burger mobile */}
                     <button
                         className={`ml-auto lg:hidden inline-flex items-center justify-center size-10 rounded-full ${
-                            isProductDetailPage ? "text-[#F6F6F6]" : "text-[#0A0F1C]"
+                            isProductDetailPage
+                                ? scrolled
+                                    ? "text-[#0A0F1C]" // 👈 couleur foncé si scrollé
+                                    : "text-[#F6F6F6]" // 👈 couleur clair si pas scrollé
+                                : "text-[#0A0F1C]"   // 👈 toujours foncé sur les autres pages
                         }`}
                         aria-label="Ouvrir le menu"
                         onClick={() => setOpen(true)}
