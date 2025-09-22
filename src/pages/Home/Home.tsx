@@ -751,7 +751,7 @@ function Home() {
                 <div className="w-full mx-auto bg-[#0A0F1C]/30">
                     <div className="flex items-center justify-between py-12">
                         {/* gauche */}
-                        <a href="#" className="uppercase tracking-[0.2em] text-[#F9F9F9] text-3xl xl:text-6xl">
+                        <a href="#" className="uppercase tracking-[0.2em] text-[#F9F9F9] text-2xl xl:text-5xl">
                             Instagram
                         </a>
 
@@ -760,7 +760,7 @@ function Home() {
 
                         {/* centre */}
                         <div className="text-center">
-                            <button className="uppercase underline underline-offset-20 text-[#F9F9F9] font-semibold text-3xl xl:text-6xl">
+                            <button className="uppercase underline underline-offset-20 text-[#F9F9F9] font-semibold text-2xl xl:text-5xl">
                                 Book une demo
                             </button>
                         </div>
@@ -769,7 +769,7 @@ function Home() {
                         <img src="/home/star.png" alt=""/>
 
                         {/* droite */}
-                        <a href="#" className="uppercase tracking-[0.2em] text-[#F9F9F9] text-3xl xl:text-6xl">
+                        <a href="#" className="uppercase tracking-[0.2em] text-[#F9F9F9] text-2xl xl:text-5xl">
                             Linkedin
                         </a>
                     </div>

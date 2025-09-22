@@ -64,7 +64,7 @@ function Navbar() {
                     </Link>
 
                     {/* FLEX 2 : menu desktop */}
-                    <div className="ml-auto hidden md:flex items-center justify-end gap-[4rem]">
+                    <div className="ml-auto hidden lg:flex items-center justify-end gap-[4rem]">
                         <ul className="flex items-center gap-8">
                             <li>
                                 <NavLink
@@ -133,7 +133,9 @@ function Navbar() {
 
                     {/* Burger mobile */}
                     <button
-                        className="ml-auto md:hidden inline-flex items-center justify-center size-10 rounded-full"
+                        className={`ml-auto lg:hidden inline-flex items-center justify-center size-10 rounded-full ${
+                            isProductDetailPage ? "text-[#F6F6F6]" : "text-[#0A0F1C]"
+                        }`}
                         aria-label="Ouvrir le menu"
                         onClick={() => setOpen(true)}
                     >
