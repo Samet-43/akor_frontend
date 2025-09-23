@@ -4,7 +4,7 @@ function Contact() {
     return (
         <>
             {/* TEXTE AVANT CONTACT */}
-            <section className="w-full py-20 mt-20">
+            <section className="w-full py-20">
                 <div className="max-w-4xl mx-auto text-center px-6">
                     <h2 className="text-2xl md:text-5xl text-[#0a0e17] font-semibold">
                         Élevons ensemble<br />
@@ -14,7 +14,7 @@ function Contact() {
             </section>
 
             {/* CONTACT */}
-            <section className="w-full pb-32">
+            <section className="w-full">
                 <div className="mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch lg:h-[90vh]">
                         {/* Image */}
@@ -173,8 +173,8 @@ function Contact() {
             </section>
 
             {/* STATS */}
-            <section className="w-full py-20 mt-20 mb-20">
-                <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6 pt-20">
+            <section className="w-full py-20 mb-20">
+                <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6 lg:pt-40 xl:pt-80">
                     <div>
                         <p className="text-3xl font-semibold text-[#0a0e17]">+1k</p>
                         <p className="mt-2 text-sm md:text-base uppercase tracking-wide text-gray-600">

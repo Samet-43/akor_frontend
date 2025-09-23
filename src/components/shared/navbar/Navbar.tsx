@@ -52,7 +52,7 @@ function Navbar() {
                         : "sticky bg-[#f6f6f6]"
                 } top-0 left-0 z-50 w-full transition-colors duration-300 px-4 pt-4`}
             >
-                <nav className="h-20 w-full px-6 md:px-10 flex items-center text-lg">
+                <nav className="h-15 lg:h-20 w-full px-6 md:px-10 flex items-center text-lg">
                     {/* FLEX 1 : logo */}
                     <Link to="/" className="flex items-center gap-3 shrink-0">
                         <img
