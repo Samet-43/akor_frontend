@@ -3,7 +3,7 @@ import { productsData } from "../../data/products.ts";
 function Contact() {
     return (
         <>
-            {/*TEXTE AVANT CONTACT*/}
+            {/* TEXTE AVANT CONTACT */}
             <section className="w-full py-20 mt-20">
                 <div className="max-w-4xl mx-auto text-center px-6">
                     <h2 className="text-2xl md:text-5xl text-[#0a0e17] font-semibold">
@@ -13,13 +13,11 @@ function Contact() {
                 </div>
             </section>
 
-            {/*CONTACT*/}
-            <section className="w-full pb-32 mb-50">
+            {/* CONTACT */}
+            <section className="w-full pb-32">
                 <div className="mx-auto px-6">
-                    {/* 2 colonnes qui prennent une hauteur un peu réduite */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch h-[90vh]">
-
-                        {/* Image — même hauteur que le form */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch lg:h-[90vh]">
+                        {/* Image */}
                         <div className="rounded-[2rem] overflow-hidden h-full">
                             <img
                                 src="/contact/hero.jpg"
@@ -28,18 +26,17 @@ function Contact() {
                             />
                         </div>
 
-                        {/* Form — occupe 100% de la hauteur disponible */}
+                        {/* Form */}
                         <div className="bg-white rounded-[2rem] p-8 sm:p-12 shadow-sm h-full flex">
                             <form className="space-y-6 w-full my-auto">
-
                                 <p className="text-xl font-semibold text-[#0A0F1C] mb-12">
                                     Formulaire de contact
                                 </p>
+
+                                {/* Nom + Prénom */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-[#0a0e17]">
-                                            Nom
-                                        </label>
+                                        <label className="block text-sm font-medium text-[#0a0e17]">Nom</label>
                                         <input
                                             type="text"
                                             placeholder="Ex : Dupont"
@@ -47,9 +44,7 @@ function Contact() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-[#0a0e17]">
-                                            Prénom
-                                        </label>
+                                        <label className="block text-sm font-medium text-[#0a0e17]">Prénom</label>
                                         <input
                                             type="text"
                                             placeholder="Ex : Julien"
@@ -58,17 +53,14 @@ function Contact() {
                                     </div>
                                 </div>
 
+                                {/* Organisation */}
                                 <div>
-                                    <label className="block text-sm font-medium text-[#0a0e17]">
-                                        Organisation / Poste
-                                    </label>
+                                    <label className="block text-sm font-medium text-[#0a0e17]">Organisation / Poste</label>
                                     <select
                                         className="mt-2 w-full rounded-full border border-gray-200 h-12 px-5 outline-none bg-white"
                                         defaultValue=""
                                     >
-                                        <option value="" disabled selected>
-                                            Votre entreprise ou poste
-                                        </option>
+                                        <option value="" disabled>Votre entreprise ou poste</option>
                                         <option value="centre-esthetique">Centre esthétique</option>
                                         <option value="pharmacie">Pharmacie / Parapharmacie</option>
                                         <option value="coiffure">Salon de coiffure</option>
@@ -79,17 +71,14 @@ function Contact() {
                                     </select>
                                 </div>
 
+                                {/* Machine concernée */}
                                 <div>
-                                    <label className="block text-sm font-medium text-[#0a0e17]">
-                                        Machine concernée
-                                    </label>
+                                    <label className="block text-sm font-medium text-[#0a0e17]">Machine concernée</label>
                                     <select
                                         className="mt-2 w-full rounded-full border border-gray-200 h-12 px-5 outline-none bg-white"
                                         defaultValue=""
                                     >
-                                        <option value="" disabled selected>
-                                            Sélectionnez une machine
-                                        </option>
+                                        <option value="" disabled>Sélectionnez une machine</option>
                                         {productsData.map((p) => (
                                             <option key={p.id} value={p.id}>
                                                 {p.title}
@@ -98,10 +87,9 @@ function Contact() {
                                     </select>
                                 </div>
 
+                                {/* Email */}
                                 <div>
-                                    <label className="block text-sm font-medium text-[#0a0e17]">
-                                        Email
-                                    </label>
+                                    <label className="block text-sm font-medium text-[#0a0e17]">Email</label>
                                     <input
                                         type="email"
                                         placeholder="votre@email.com"
@@ -109,10 +97,9 @@ function Contact() {
                                     />
                                 </div>
 
+                                {/* Téléphone */}
                                 <div>
-                                    <label className="block text-sm font-medium text-[#0a0e17]">
-                                        Téléphone
-                                    </label>
+                                    <label className="block text-sm font-medium text-[#0a0e17]">Téléphone</label>
                                     <div className="mt-2 w-full rounded-full border border-gray-200 h-12 flex items-center px-4 gap-3">
                                         <span className="text-lg leading-none">🇧🇪</span>
                                         <span className="text-sm text-gray-600">+32</span>
@@ -124,11 +111,10 @@ function Contact() {
                                     </div>
                                 </div>
 
+                                {/* Adresse + Code postal */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-[#0a0e17]">
-                                            Adresse
-                                        </label>
+                                        <label className="block text-sm font-medium text-[#0a0e17]">Adresse</label>
                                         <input
                                             type="text"
                                             placeholder="Rue, numéro, ville"
@@ -136,9 +122,7 @@ function Contact() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-[#0a0e17]">
-                                            Code postal
-                                        </label>
+                                        <label className="block text-sm font-medium text-[#0a0e17]">Code postal</label>
                                         <input
                                             type="text"
                                             placeholder="Ex : 1040"
@@ -147,7 +131,8 @@ function Contact() {
                                     </div>
                                 </div>
 
-                                <div className="flex-1">
+                                {/* Message */}
+                                <div>
                                     <label className="block text-sm font-medium text-[#0a0e17]">
                                         Message <span className="text-[#ff9f1c]">*</span>
                                     </label>
@@ -158,6 +143,7 @@ function Contact() {
                                     />
                                 </div>
 
+                                {/* Bouton */}
                                 <button
                                     type="submit"
                                     className="w-full h-12 rounded-full bg-[#0a0e17] text-white text-sm font-medium"
@@ -165,9 +151,10 @@ function Contact() {
                                     Envoyer le message
                                 </button>
 
+                                {/* Infos contact */}
                                 <div className="pt-2 text-xs text-gray-500 space-y-2">
                                     <p>
-                                        Contactez-nous via
+                                        Contactez-nous via{" "}
                                         <a href="mailto:contact@akor-aesthetics.com" className="underline ml-1">
                                             contact@akor-aesthetics.com
                                         </a>
@@ -181,55 +168,51 @@ function Contact() {
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            {/*STATS*/}
+            {/* STATS */}
             <section className="w-full py-20 mt-20 mb-20">
-                <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6">
-
+                <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center px-6 pt-20">
                     <div>
                         <p className="text-3xl font-semibold text-[#0a0e17]">+1k</p>
-                        <p className="mt-2 text-sm uppercase tracking-wide text-gray-600">
+                        <p className="mt-2 text-sm md:text-base uppercase tracking-wide text-gray-600">
                             Machines installées<br />avec succès
                         </p>
                     </div>
 
                     <div>
                         <p className="text-3xl font-semibold text-[#0a0e17]">+97%</p>
-                        <p className="mt-2 text-sm uppercase tracking-wide text-gray-600">
+                        <p className="mt-2 text-sm md:text-base uppercase tracking-wide text-gray-600">
                             Des pro constatent un<br />retour sur investissement rapide
                         </p>
                     </div>
 
                     <div>
                         <p className="text-3xl font-semibold text-[#0a0e17]">+15</p>
-                        <p className="mt-2 text-sm uppercase tracking-wide text-gray-600">
+                        <p className="mt-2 text-sm md:text-base uppercase tracking-wide text-gray-600">
                             D’expertise dans la<br />technologie esthétique
                         </p>
                     </div>
 
                     <div>
                         <p className="text-3xl font-semibold text-[#0a0e17]">+500</p>
-                        <p className="mt-2 text-sm uppercase tracking-wide text-gray-600">
+                        <p className="mt-2 text-sm md:text-base uppercase tracking-wide text-gray-600">
                             Cliniques & instituts –<br />équipés par Akor
                         </p>
                     </div>
-
                 </div>
             </section>
 
-            {/*WORLD*/}
+            {/* WORLD */}
             <section className="w-full mt-32 mb-32 flex justify-center">
-                <img src="/about-us/world.png" alt="" style={{ width: '100%' }} />
+                <img src="/about-us/world.png" alt="" className="w-full" />
             </section>
 
-            {/*NEWSLETTER*/}
+            {/* NEWSLETTER */}
             <section className="w-full pb-16 lg:pb-24">
                 <div className="px-6 lg:px-12 xl:px-40 text-center text-xl lg:text-2xl font-semibold">
-                    {/* Texte principal */}
                     <h2 className="text-[#0A0F1C] mb-2">
                         Abonnez-vous maintenant{" "}
                         <img
@@ -237,14 +220,12 @@ function Contact() {
                             alt=""
                             className="inline-block align-middle"
                         />{" "}
-
                     </h2>
                     <p className="text-[#0A0F1C]/70 mb-8">
                         et recevez nos conseils et offres exclusives !
                     </p>
 
-                    {/* Formulaire */}
-                    <form className="flex justify-center gap-3 max-w-md mx-auto font-medium text-lg xl:text-xl">
+                    <form className="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto font-medium text-lg xl:text-xl">
                         <input
                             type="email"
                             placeholder="Votre email"
@@ -259,9 +240,8 @@ function Contact() {
                     </form>
                 </div>
             </section>
-
         </>
-    )
+    );
 }
 
-export default Contact
+export default Contact;

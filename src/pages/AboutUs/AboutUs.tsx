@@ -10,24 +10,24 @@ function AboutUs() {
                 <img
                     src="/about-us/hero-1.jpg"
                     alt="About us hero"
-                    className="w-full h-auto"
+                    className="w-full h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-auto object-cover"
                 />
 
                 {/* Texte superposé */}
-                <div className="absolute inset-0 flex items-center px-6 md:px-12">
-                    <div className="max-w-xl text-left">
-                        <h1 className="text-3xl md:text-5xl font-medium text-[#0a0e17] leading-tight">
+                <div className="absolute inset-0 flex items-center px-4 sm:px-6 md:px-12">
+                    <div className="w-1/2 sm:max-w-[60%] md:max-w-xl text-left">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-medium text-[#0a0e17] leading-tight">
                             Leader des équipements esthétiques en Europe
                         </h1>
 
-                        <p className="mt-5 text-sm md:text-base text-[#0a0e17]/80">
+                        <p className="mt-4 text-sm sm:text-base md:text-lg text-[#0a0e17]/80 leading-relaxed">
                             Tout pour aider les professionnels de l’esthétique à se concentrer sur ce qui
                             compte le plus : leurs clients. Et nous en sommes fiers.
                         </p>
 
                         <a
                             href="/contact"
-                            className="inline-flex h-11 px-6 mt-7 rounded-full bg-[#0a0e17] text-white text-sm items-center justify-center"
+                            className="inline-flex h-10 sm:h-11 px-5 sm:px-6 mt-6 rounded-full bg-[#0a0e17] text-white text-sm sm:text-base items-center justify-center"
                         >
                             Contactez-nous
                         </a>
@@ -42,7 +42,7 @@ function AboutUs() {
 
                         {/* Bloc texte */}
                         <div className="bg-[#EFEEEE] rounded-[2rem] p-6 md:p-8 lg:p-10 flex items-center">
-                            <div className="max-w-[70%]">
+                            <div className="max-w-[70%] text-center mx-auto lg:text-left lg:mx-0">
 
                                 <h2 className="text-xl md:text-2xl font-medium text-[#0a0e17] mb-20">
                                     AKOR Aesthetics redéfinit la technologie
@@ -50,24 +50,22 @@ function AboutUs() {
                                 </h2>
 
                                 <ul className="space-y-5 md:space-y-6 text-base text-[#0a0e17]/80 leading-relaxed">
-                                    <li className="flex gap-4">
+                                    <li className="flex flex-col items-center text-center gap-2 lg:flex-row lg:items-start lg:text-left lg:gap-4">
                                         {/* icône 1 */}
-                                        <span className="shrink-0 mt-1">
-
-                                        <img src="/about-us/circle.svg" alt=""/>
-                                    </span>
+                                        <span className="shrink-0">
+      <img src="/about-us/circle.svg" alt="" />
+    </span>
                                         <p>
                                             Notre mission est d’accompagner les professionnels de l’esthétique
                                             avec des équipements performants, fiables et simples d’utilisation.
                                         </p>
                                     </li>
 
-                                    <li className="flex gap-4">
+                                    <li className="flex flex-col items-center text-center gap-2 lg:flex-row lg:items-start lg:text-left lg:gap-4">
                                         {/* icône 2 */}
-                                        <span className="shrink-0 mt-1">
-
-                                        <img src="/about-us/eye.svg" alt=""/>
-                                    </span>
+                                        <span className="shrink-0">
+      <img src="/about-us/eye.svg" alt="" />
+    </span>
                                         <p>
                                             Nous visons à transformer chaque diagnostic et traitement en une
                                             expérience précise, personnalisée et durable, pour sublimer la confiance
@@ -75,6 +73,7 @@ function AboutUs() {
                                         </p>
                                     </li>
                                 </ul>
+
                             </div>
                         </div>
 
@@ -151,23 +150,21 @@ function AboutUs() {
 
                         {/* Bloc texte */}
                         <div className="bg-[#EFEEEE] rounded-[2rem] p-6 md:p-8 lg:p-10 flex items-center">
-                            <div className="max-w-[70%]">
+                            <div className="max-w-[70%] text-center mx-auto lg:text-left lg:mx-0">
 
                                 <h2 className="text-xl md:text-2xl font-medium text-[#0a0e17]">
                                     Tout pour aider les professionnels de l’esthétique à se concentrer sur ce qui compte le plus : leurs clients.
                                 </h2>
 
                                 <ul className="space-y-5 md:space-y-6 text-base text-[#0a0e17]/80 leading-relaxed mt-20">
-                                    <li className="flex gap-4">
+                                    <li className="flex justify-center lg:justify-start">
                                         <p>
                                             Chez AKOR, nous savons que la priorité des professionnels de l’esthétique est de
                                             délivrer des soins de qualité et de bâtir une relation de confiance avec leurs clients.
-
                                         </p>
                                     </li>
 
-                                    <li className="flex gap-4">
-                                        {/* icône 2 */}
+                                    <li className="flex justify-center lg:justify-start">
                                         <p>
                                             C’est pourquoi nous proposons des équipements esthétiques performants,
                                             fiables et simples d’utilisation, afin de vous libérer des contraintes
@@ -179,7 +176,7 @@ function AboutUs() {
                             </div>
                         </div>
 
-                        {/* Image droite (remplace le src si besoin) */}
+                        {/* Image droite */}
                         <div className="rounded-[2rem] overflow-hidden">
                             <img
                                 src="/about-us/hero-3.png"
@@ -205,27 +202,31 @@ function AboutUs() {
             {/*AXES D'EXCELLENCE*/}
             <section className="w-full">
                 <div>
-                    <div className="grid xl:grid-cols-2 gap-10 items-center rounded-[2rem] p-8 lg:p-12">
+                    <div className="grid lg:grid-cols-2 gap-10 items-center rounded-[2rem] p-8 lg:p-12">
 
-                            <img
-                                src="/about-us/hero-4.png"
-                                alt="Clients accompagnés par AKOR"
-                                className="w-full h-full object-cover"
-                            />
+                        {/* Image gauche */}
+                        <img
+                            src="/about-us/hero-4.png"
+                            alt="Clients accompagnés par AKOR"
+                            className="w-full h-full object-cover rounded-[2rem]"
+                        />
 
+                        {/* Bloc texte */}
                         <div className="bg-[#EFEEEE] rounded-[2.5rem] h-full flex flex-col justify-center p-8 lg:p-12">
-                            <h2 className="text-[#0A0F1C] text-2xl lg:text-3xl font-semibold mb-6">
-                                Nos axes d’excellence : Découvrez comment AKOR accompagne ses clients à chaque étape
-                            </h2>
-                            <p className="text-[#0A0F1C]/70 leading-relaxed mb-4 mt-8">
-                                Chez AKOR, nous mettons l’accent sur deux axes essentiels pour garantir votre
-                                satisfaction. Marketing : nous vous aidons à valoriser vos services et à promouvoir vos
-                                soins grâce à des solutions adaptées et efficaces.
-                            </p>
-                            <p className="text-[#0A0F1C]/70 leading-relaxed">
-                                SAV / Garantie : nous assurons un suivi complet et une assistance technique rapide pour
-                                que vos équipements restent performants et fiables à long terme.
-                            </p>
+                            <div className="max-w-[80%] text-center mx-auto lg:text-left lg:mx-0">
+                                <h2 className="text-[#0A0F1C] text-2xl lg:text-3xl font-semibold mb-6">
+                                    Nos axes d’excellence : Découvrez comment AKOR accompagne ses clients à chaque étape
+                                </h2>
+                                <p className="text-[#0A0F1C]/70 leading-relaxed mb-4 mt-8">
+                                    Chez AKOR, nous mettons l’accent sur deux axes essentiels pour garantir votre
+                                    satisfaction. Marketing : nous vous aidons à valoriser vos services et à promouvoir vos
+                                    soins grâce à des solutions adaptées et efficaces.
+                                </p>
+                                <p className="text-[#0A0F1C]/70 leading-relaxed">
+                                    SAV / Garantie : nous assurons un suivi complet et une assistance technique rapide pour
+                                    que vos équipements restent performants et fiables à long terme.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
